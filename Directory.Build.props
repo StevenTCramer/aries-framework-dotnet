@@ -14,11 +14,12 @@
 
     <!-- Common compile parameters -->
     <PropertyGroup>
-        <Nullable>disable</Nullable>
-        <LangVersion>latest</LangVersion>
-        <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
         <!-- We use full (Windows PDBs) until cross platform support for source link will get better -->
         <DebugType>full</DebugType>
+        <LangVersion>latest</LangVersion>
+        <NoWarn>$(NoWarn);1591</NoWarn>
+        <Nullable>disable</Nullable>
+        <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
     </PropertyGroup>
     
     <!--Versions of packages used across the repository-->
