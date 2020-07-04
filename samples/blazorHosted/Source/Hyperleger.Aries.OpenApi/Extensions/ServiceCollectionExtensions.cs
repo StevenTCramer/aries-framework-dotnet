@@ -1,6 +1,7 @@
 ﻿namespace Microsoft.Extensions.DependencyInjection
 {
   using FluentValidation;
+  using FluentValidation.AspNetCore;
   using Hyperledger.Aries.OpenApi.Configuration;
   using Hyperledger.Aries.OpenApi.Features.Bases;
   using MediatR;
@@ -8,6 +9,7 @@
   using Swashbuckle.AspNetCore.Swagger;
   using System;
   using System.IO;
+  using System.Linq;
   using System.Reflection;
 
   /// <summary>
@@ -35,6 +37,15 @@
 
       aMvcBuilder
         .AddApplicationPart(typeof(AriesOpenApiOptions).Assembly);
+
+      if (!aServiceCollection.Any(aServiceDescriptor => aServiceDescriptor.ServiceType == typeof(IValidatorFactory)))
+      {
+        throw new InvalidOperationException
+        (
+          $"You must call {nameof(FluentValidationMvcExtensions.AddFluentValidation)} " +
+          $"prior to {nameof(AddAriesOpenApi)}"
+        );
+      }
 
       aServiceCollection.AddValidatorsFromAssemblyContaining<BaseRequest>();
       aServiceCollection.AddValidatorsFromAssemblyContaining<AriesOpenApiOptions>();
