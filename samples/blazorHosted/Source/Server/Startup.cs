@@ -3,7 +3,6 @@ namespace Hyperledger.Aries.OpenApi.Server
   using AutoMapper;
   using FluentValidation.AspNetCore;
   using Hyperledger.Aries.OpenApi.Configuration;
-  using Hyperledger.Aries.OpenApi.Features.Bases;
   using Hyperledger.Aries.OpenApi.Infrastructure;
   using Hyperledger.Aries.Storage;
   using Jdenticon.AspNetCore;
