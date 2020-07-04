@@ -54,15 +54,5 @@ namespace Hyperledger.Aries.Features.PresentProof
         [JsonProperty("non_revoked", NullValueHandling = NullValueHandling.Ignore)]
         [JsonPropertyName("non_revoked")]
         public RevocationInterval NonRevoked { get; set; }
-        
-        /// <inheritdoc />
-        public override string ToString() =>
-            $"{GetType().Name}: " +
-            $"Name={Name}, " +
-            $"Version={Version}, " +
-            $"Nonce={Nonce}, " +
-            $"RequestedAttributes={string.Join(",", RequestedAttributes ?? new Dictionary<string, ProofAttributeInfo>())}, " +
-            $"RequestedPredicates={string.Join(",", RequestedPredicates ?? new Dictionary<string, ProofPredicateInfo>())}, " +
-            $"NonRevoked={NonRevoked}";
     }
 }
