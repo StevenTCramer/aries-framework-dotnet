@@ -8,8 +8,8 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Microsoft.AspNetCore.Http.Extensions" Version="2.1.1" />
-        <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.1.1" />
+        <PackageReference Include="Microsoft.AspNetCore.Http.Extensions" Version="$(MicrosoftAspNetCoreHttpExtensionsVersion)" />
+        <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="$(MicrosoftAspNetCoreHttpAbstractionsVersion)" />
     </ItemGroup>
 
     <ItemGroup>

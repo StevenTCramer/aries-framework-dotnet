@@ -21,11 +21,22 @@
         <Nullable>disable</Nullable>
         <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
     </PropertyGroup>
-    
+
     <!--Versions of packages used across the repository-->
     <PropertyGroup Label="Package Versions">
+        <MicrosoftAspNetCoreHttpAbstractionsVersion>2.2.0</MicrosoftAspNetCoreHttpAbstractionsVersion>
+        <MicrosoftAspNetCoreHttpExtensionsVersion>2.2.0</MicrosoftAspNetCoreHttpExtensionsVersion>
+        <MicrosoftExtensionsHostingVersion>2.1.1</MicrosoftExtensionsHostingVersion>
+        <MicrosoftExtensionsHttpVersion>2.1.1</MicrosoftExtensionsHttpVersion>
+        <MicrosoftExtensionsLoggingVersion>2.1.1</MicrosoftExtensionsLoggingVersion>
+        <SystemReactiveLinqVersion>4.1.2</SystemReactiveLinqVersion>
+        <SystemTextJsonVersion>4.7.2</SystemTextJsonVersion>
 
-
+        <FlurlVersion>2.8.2</FlurlVersion>
+        <HyperledgerIndySdkVersion>1.11.1</HyperledgerIndySdkVersion>
+        <NewtonsoftJsonVersion>11.0.2</NewtonsoftJsonVersion>
+        <PollyVersion>7.2.0</PollyVersion>
+        <StatelessVersion>4.2.1</StatelessVersion>
     </PropertyGroup>
-    
+
 </Project>
