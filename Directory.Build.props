@@ -34,8 +34,8 @@
 
         <FlurlVersion>2.8.2</FlurlVersion>
         <HyperledgerIndySdkVersion>1.11.1</HyperledgerIndySdkVersion>
-        <NewtonsoftJsonVersion>11.0.2</NewtonsoftJsonVersion>
-        <PollyVersion>7.2.0</PollyVersion>
+        <NewtonsoftJsonVersion>12.0.3</NewtonsoftJsonVersion>
+        <PollyVersion>7.2.1</PollyVersion>
         <StatelessVersion>4.2.1</StatelessVersion>
     </PropertyGroup>
 
