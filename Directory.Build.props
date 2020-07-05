@@ -45,6 +45,7 @@
         <StatelessVersion>5.1.2</StatelessVersion>
         <XunitVersion>2.4.1</XunitVersion>
         <XunitRunnerVisualstudioVersion>2.4.2</XunitRunnerVisualstudioVersion>
+        <MultiformatsBaseVersion>2.0.2</MultiformatsBaseVersion>
         
         
     </PropertyGroup>
