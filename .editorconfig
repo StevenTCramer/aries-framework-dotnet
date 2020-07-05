@@ -15,7 +15,7 @@ tab_width = 4
 
 # New line preferences
 end_of_line = crlf
-insert_final_newline = false
+insert_final_newline = true
 
 # Development files
 [*.{cs,csx,cshtml,csproj,razor,sln,props,targets,json,md,yml,gitignore,}]
@@ -270,3 +270,6 @@ guidelines = 120
 
 # CA1054: Uri parameters should not be strings
 # dotnet_diagnostic.CA1054.severity = silent
+
+# CS1591: Missing XML comment for publicly visible type or member
+dotnet_diagnostic.CS1591.severity = suggestion
