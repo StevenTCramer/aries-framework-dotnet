@@ -2,12 +2,12 @@
 {
   using FluentValidation;
   
-  public class RecieveInvitationRequestValidator : AbstractValidator<RecieveInvitationRequest>
+  public class ReceiveInvitationRequestValidator : AbstractValidator<ReceiveInvitationRequest>
   {
 
-    public RecieveInvitationRequestValidator()
+    public ReceiveInvitationRequestValidator()
     {
-      RuleFor(aRecieveInvitationRequest => aRecieveInvitationRequest.InvitationDetails)
+      RuleFor(aReceiveInvitationRequest => aReceiveInvitationRequest.InvitationDetails)
         .NotEmpty();
     }
   }

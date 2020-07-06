@@ -4,13 +4,13 @@ namespace Hyperledger.Aries.AspNetCore.Features.Connections
   using Hyperledger.Aries.AspNetCore.Features.Bases;
   using Hyperledger.Aries.Features.DidExchange;
 
-  public class RecieveInvitationResponse : BaseResponse
+  public class ReceiveInvitationResponse : BaseResponse
   {
     public ConnectionInvitationMessage ConnectionInvitationMessage { get; set; } = null!;
 
-    public RecieveInvitationResponse() { }
+    public ReceiveInvitationResponse() { }
 
-    public RecieveInvitationResponse(Guid aCorrelationId, ConnectionInvitationMessage aConnectionInvitationMessage)
+    public ReceiveInvitationResponse(Guid aCorrelationId, ConnectionInvitationMessage aConnectionInvitationMessage)
       : base(aCorrelationId) 
     {
       ConnectionInvitationMessage = aConnectionInvitationMessage;

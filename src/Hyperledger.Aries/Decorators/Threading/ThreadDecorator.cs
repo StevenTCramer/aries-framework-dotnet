@@ -35,6 +35,6 @@ namespace Hyperledger.Aries.Decorators.Threading
         /// </summary>
         [JsonProperty("received_orders")]
         [JsonPropertyName("received_orders")]
-        public Dictionary<string, int> RecievedOrders { get; set; } = new Dictionary<string, int>();
+        public Dictionary<string, int> ReceivedOrders { get; set; } = new Dictionary<string, int>();
     }
 }

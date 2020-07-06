@@ -3,15 +3,15 @@ namespace Hyperledger.Aries.AspNetCore.Features.Connections
   using Hyperledger.Aries.AspNetCore.Features.Bases;
   using MediatR;
 
-  public class RecieveInvitationRequest : BaseApiRequest, IRequest<RecieveInvitationResponse>
+  public class ReceiveInvitationRequest : BaseApiRequest, IRequest<ReceiveInvitationResponse>
   {
-    public const string RouteTemplate = BaseRequest.BaseUri + "connections/recieve-invitation";
+    public const string RouteTemplate = BaseRequest.BaseUri + "connections/receive-invitation";
 
     public string InvitationDetails { get; set; } = null!;
 
     internal override string GetRoute() => $"{RouteTemplate}?{nameof(CorrelationId)}={CorrelationId}";
 
-    public RecieveInvitationRequest(string aInvitationDetails)
+    public ReceiveInvitationRequest(string aInvitationDetails)
     {
       InvitationDetails = aInvitationDetails;
     }
