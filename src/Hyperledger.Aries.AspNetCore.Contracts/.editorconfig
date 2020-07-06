@@ -264,11 +264,17 @@ guidelines = 120
 # Named color format
 guidelines_style = 1px dotted silver
 
+# CA1054: Uri parameters should not be strings
+dotnet_diagnostic.CA1054.severity = suggestion
+
 # CA1056: Uri properties should not be strings
-dotnet_diagnostic.CA1056.severity = silent
+dotnet_diagnostic.CA1056.severity = suggestion
+
+# CS1591: Missing XML comment for publicly visible type or member
+dotnet_diagnostic.CS1591.severity = suggestion
 
 # CA1826: Do not use Enumerable methods on indexable collections. Instead use the collection directly
 dotnet_diagnostic.CA1826.severity = silent
 
-# CA1054: Uri parameters should not be strings
-dotnet_diagnostic.CA1054.severity = silent
+# CA2227: Collection properties should be read only
+dotnet_diagnostic.CA2227.severity = none
