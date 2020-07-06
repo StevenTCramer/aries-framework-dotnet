@@ -19,6 +19,7 @@
       JsonSerializerSettings aJsonSerializerSettings
     ) : base(aAliceWebApplicationFactory, aJsonSerializerSettings)
     {
+      RecieveInvitationRequestValidator = new RecieveInvitationRequestValidator();
       RecieveInvitationRequest = CreateValidRecieveInvitationRequest();
     }
 
