@@ -341,3 +341,4 @@ docs/_build
 /.vscode/
 /samples/aspnetcore/.vscode/
 /docs/.vscode/
+/samples/blazorHosted/
