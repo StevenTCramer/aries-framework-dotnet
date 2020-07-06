@@ -5,6 +5,7 @@
   using Hyperledger.Aries.OpenApi.Configuration;
   using Hyperledger.Aries.OpenApi.Features.Bases;
   using MediatR;
+  using Microsoft.AspNetCore.Mvc;
   using Microsoft.OpenApi.Models;
   using Swashbuckle.AspNetCore.Swagger;
   using System;
@@ -13,31 +14,55 @@
   using System.Reflection;
 
   /// <summary>
-  /// ServiceCollection Extension Methods
+  /// IMvcBuilder Extension Methods
   /// </summary>
-  public static class ServiceCollectionExtensions
+  public static class MvcBuilderExtensions
   {
     private const string SwaggerVersion = "v1";
 
     /// <summary>
     /// Register Aries Open Api services
     /// </summary>
-    /// <param name="aServiceCollection"></param>
     /// <param name="aMvcBuilder"></param>
     /// <param name="aConfigureAriesOpenApiOptionsAction"></param>
-    public static IServiceCollection AddAriesOpenApi
+    public static IMvcBuilder AddAriesOpenApi
     (
-      this IServiceCollection aServiceCollection,
-      IMvcBuilder aMvcBuilder,
+      this IMvcBuilder aMvcBuilder,
       Action<AriesOpenApiOptions> aConfigureAriesOpenApiOptionsAction = null
     )
     {
+      IServiceCollection serviceCollection = aMvcBuilder.Services;
+
+      bool hasAlreadyBeenRun = serviceCollection.Any(aServiceDescriptor => aServiceDescriptor.ServiceType == typeof(AriesOpenApiOptions));
+      if (hasAlreadyBeenRun) return aMvcBuilder;
+      
       var ariesOpenApiOptions = new AriesOpenApiOptions();
       aConfigureAriesOpenApiOptionsAction?.Invoke(ariesOpenApiOptions);
 
       aMvcBuilder
         .AddApplicationPart(typeof(AriesOpenApiOptions).Assembly);
 
+
+      ConfigureFluentValidationServices(serviceCollection);
+      serviceCollection.Configure<ApiBehaviorOptions>
+      (
+        aApiBehaviorOptions => aApiBehaviorOptions.SuppressInferBindingSourcesForParameters = true
+      );
+
+      serviceCollection.AddMediatR(typeof(BaseError).Assembly);
+
+      ConfigureAriesOpenApiOptions(serviceCollection, ariesOpenApiOptions);
+
+      if (ariesOpenApiOptions.UseSwaggerUi)
+      {
+        ConfigureSwagger(serviceCollection, ariesOpenApiOptions);
+      }
+
+      return aMvcBuilder;
+    }
+
+    private static void ConfigureFluentValidationServices(IServiceCollection aServiceCollection)
+    {
       if (!aServiceCollection.Any(aServiceDescriptor => aServiceDescriptor.ServiceType == typeof(IValidatorFactory)))
       {
         throw new InvalidOperationException
@@ -49,17 +74,6 @@
 
       aServiceCollection.AddValidatorsFromAssemblyContaining<BaseRequest>();
       aServiceCollection.AddValidatorsFromAssemblyContaining<AriesOpenApiOptions>();
-
-      aServiceCollection.AddMediatR(typeof(BaseError).Assembly);
-
-      ConfigureAriesOpenApiOptions(aServiceCollection, ariesOpenApiOptions);
-
-      if (ariesOpenApiOptions.UseSwaggerUi)
-      {
-        ConfigureSwagger(aServiceCollection, ariesOpenApiOptions);
-      }
-
-      return aServiceCollection;
     }
 
     private static string ConfigureAriesOpenApiOptions(IServiceCollection aServiceCollection, AriesOpenApiOptions aAriesOpenApiOptions)

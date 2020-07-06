@@ -1,5 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
     <Description>Api Library</Description>
     <Nullable>enable</Nullable>
   </PropertyGroup>
@@ -7,10 +8,6 @@
   <PropertyGroup>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <NoWarn>$(NoWarn);1591</NoWarn>
-  </PropertyGroup>
-  
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <CodeAnalysisRuleSet>../../TimeWarp.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
 
   <ItemGroup>
@@ -30,6 +27,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\src\Hyperledger.Aries\Hyperledger.Aries.csproj" />
+    <ProjectReference Include="..\Hyperledger.Aries\Hyperledger.Aries.csproj" />
   </ItemGroup>
 </Project>
