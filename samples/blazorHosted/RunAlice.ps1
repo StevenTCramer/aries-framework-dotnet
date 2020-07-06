@@ -1,1 +1,1 @@
-dotnet run --project .\Source\Server\ --no-build  --launch-profile "Hyperledger.Aries.OpenApi.Server Alice"
+dotnet run --project .\Source\Server\ --no-build  --launch-profile "Hyperledger.Aries.AspNetCore.Server Alice"

@@ -1,8 +1,8 @@
-﻿namespace Hyperledger.Aries.OpenApi.Features.PresentProofs.Pages
+﻿namespace Hyperledger.Aries.AspNetCore.Features.PresentProofs.Pages
 {
   using BlazorState.Features.Routing;
   using System.Threading.Tasks;
-  using static Hyperledger.Aries.OpenApi.Features.PresentProofs.PresentProofState;
+  using static Hyperledger.Aries.AspNetCore.Features.PresentProofs.PresentProofState;
 
   public partial class Index
   {

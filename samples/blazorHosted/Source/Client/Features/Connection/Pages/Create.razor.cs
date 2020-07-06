@@ -1,12 +1,12 @@
-namespace Hyperledger.Aries.OpenApi.Features.Connections.Pages
+namespace Hyperledger.Aries.AspNetCore.Features.Connections.Pages
 {
-  using Hyperledger.Aries.OpenApi.Features.Bases;
-  using Hyperledger.Aries.OpenApi.Features.Connections;
+  using Hyperledger.Aries.AspNetCore.Features.Bases;
+  using Hyperledger.Aries.AspNetCore.Features.Connections;
   using Microsoft.AspNetCore.Components;
   using Microsoft.JSInterop;
   using System.Threading.Tasks;
-  using static Hyperledger.Aries.OpenApi.Features.Connections.ConnectionState;
-  using static Hyperledger.Aries.OpenApi.Features.Wallets.WalletState;
+  using static Hyperledger.Aries.AspNetCore.Features.Connections.ConnectionState;
+  using static Hyperledger.Aries.AspNetCore.Features.Wallets.WalletState;
 
   public partial class Create : BaseComponent
   {

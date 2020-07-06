@@ -1,8 +1,8 @@
-namespace Hyperledger.Aries.OpenApi.Components
+namespace Hyperledger.Aries.AspNetCore.Components
 {
   using BlazorState.Services;
   using Microsoft.AspNetCore.Components;
-  using Hyperledger.Aries.OpenApi.Features.Bases;
+  using Hyperledger.Aries.AspNetCore.Features.Bases;
 
   public partial class BlazorLocation: BaseComponent
   {

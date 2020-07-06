@@ -1,4 +1,4 @@
-namespace Hyperledger.Aries.OpenApi.Features.Identicons
+namespace Hyperledger.Aries.AspNetCore.Features.Identicons
 {
   using Microsoft.AspNetCore.Mvc;
   using Swashbuckle.AspNetCore.Annotations;

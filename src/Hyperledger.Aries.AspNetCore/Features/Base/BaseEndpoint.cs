@@ -1,4 +1,4 @@
-namespace Hyperledger.Aries.OpenApi.Features.Bases
+namespace Hyperledger.Aries.AspNetCore.Features.Bases
 {
   using MediatR;
   using Microsoft.AspNetCore.Mvc;

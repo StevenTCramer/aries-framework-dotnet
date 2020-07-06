@@ -1,4 +1,4 @@
-﻿namespace Hyperledger.Aries.OpenApi.Features.Wallets
+﻿namespace Hyperledger.Aries.AspNetCore.Features.Wallets
 {
   using BlazorState;
   using Hyperledger.Aries.Configuration;

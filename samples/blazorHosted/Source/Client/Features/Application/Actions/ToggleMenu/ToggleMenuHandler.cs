@@ -1,10 +1,10 @@
-namespace Hyperledger.Aries.OpenApi.Features.Applications
+namespace Hyperledger.Aries.AspNetCore.Features.Applications
 {
   using BlazorState;
   using MediatR;
   using System.Threading;
   using System.Threading.Tasks;
-  using Hyperledger.Aries.OpenApi.Features.Bases;
+  using Hyperledger.Aries.AspNetCore.Features.Bases;
 
   internal partial class ApplicationState
   {

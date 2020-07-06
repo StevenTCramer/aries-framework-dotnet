@@ -1,4 +1,4 @@
-﻿namespace Hyperledger.Aries.OpenApi.Client.Integration.Tests.Infrastructure
+﻿namespace Hyperledger.Aries.AspNetCore.Client.Integration.Tests.Infrastructure
 {
   using Microsoft.Extensions.DependencyInjection;
   using System;

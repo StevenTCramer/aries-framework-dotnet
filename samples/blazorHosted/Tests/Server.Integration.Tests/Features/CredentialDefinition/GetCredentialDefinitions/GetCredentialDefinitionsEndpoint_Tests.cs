@@ -6,9 +6,9 @@
 //  using System.Net.Http;
 //  using System.Text.Json;
 //  using System.Threading.Tasks;
-//  using Hyperledger.Aries.OpenApi.Features.CredentialDefinitions;
-//  using Hyperledger.Aries.OpenApi.Server.Integration.Tests.Infrastructure;
-//  using Hyperledger.Aries.OpenApi.Server;
+//  using Hyperledger.Aries.AspNetCore.Features.CredentialDefinitions;
+//  using Hyperledger.Aries.AspNetCore.Server.Integration.Tests.Infrastructure;
+//  using Hyperledger.Aries.AspNetCore.Server;
 
 //  public class Returns : BaseTest
 //  {

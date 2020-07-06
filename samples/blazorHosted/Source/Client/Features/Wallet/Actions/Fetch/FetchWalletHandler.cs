@@ -1,6 +1,6 @@
-namespace Hyperledger.Aries.OpenApi.Features.Wallets
+namespace Hyperledger.Aries.AspNetCore.Features.Wallets
 {
-  using Hyperledger.Aries.OpenApi.Features.Bases;
+  using Hyperledger.Aries.AspNetCore.Features.Bases;
   using BlazorState;
   using MediatR;
   using Newtonsoft.Json;

@@ -1,4 +1,4 @@
-﻿namespace Hyperledger.Aries.OpenApi.Features.PresentProofs.Pages
+﻿namespace Hyperledger.Aries.AspNetCore.Features.PresentProofs.Pages
 {
   using Hyperledger.Aries.Features.PresentProof;
   using System;
@@ -6,7 +6,7 @@
   using System.Linq;
   using System.Text;
   using System.Threading.Tasks;
-  using static Hyperledger.Aries.OpenApi.Features.PresentProofs.PresentProofState;
+  using static Hyperledger.Aries.AspNetCore.Features.PresentProofs.PresentProofState;
   using static BlazorState.Features.Routing.RouteState;
 
   public partial class View

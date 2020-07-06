@@ -1,9 +1,9 @@
-﻿namespace Hyperledger.Aries.OpenApi.Features.Wallets.Pages
+﻿namespace Hyperledger.Aries.AspNetCore.Features.Wallets.Pages
 {
-  using Hyperledger.Aries.OpenApi.Features.Bases;
+  using Hyperledger.Aries.AspNetCore.Features.Bases;
   using System.Linq;
   using System.Threading.Tasks;
-  using static Hyperledger.Aries.OpenApi.Features.Wallets.WalletState;
+  using static Hyperledger.Aries.AspNetCore.Features.Wallets.WalletState;
 
   public partial class WalletPage : BaseComponent
   {

@@ -1,6 +1,6 @@
-namespace Hyperledger.Aries.OpenApi.Features.Applications
+namespace Hyperledger.Aries.AspNetCore.Features.Applications
 {
-  using Hyperledger.Aries.OpenApi.Features.Bases;
+  using Hyperledger.Aries.AspNetCore.Features.Bases;
 
   internal partial class ApplicationState
   {

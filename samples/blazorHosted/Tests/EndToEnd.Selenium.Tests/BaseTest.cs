@@ -1,9 +1,9 @@
-﻿namespace Hyperledger.Aries.OpenApi.EndToEnd.Tests
+﻿namespace Hyperledger.Aries.AspNetCore.EndToEnd.Tests
 {
   using OpenQA.Selenium;
   using OpenQA.Selenium.Support.UI;
   using System;
-  using Hyperledger.Aries.OpenApi.EndToEnd.Tests.Infrastructure;
+  using Hyperledger.Aries.AspNetCore.EndToEnd.Tests.Infrastructure;
 
   public abstract class BaseTest
   {

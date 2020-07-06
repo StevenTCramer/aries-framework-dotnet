@@ -8,7 +8,7 @@
     }
   },
   "profiles": {
-    "Hyperledger.Aries.OpenApi.Server Faber": {
+    "Hyperledger.Aries.AspNetCore.Server Faber": {
       "commandName": "Project",
       "launchBrowser": false,
       "inspectUri": "{wsProtocol}://{url.hostname}:{url.port}/_framework/debug/ws-proxy?browser={browserInspectUri}",
@@ -17,7 +17,7 @@
       },
       "applicationUrl": "https://localhost:5551;http://localhost:5550"
     },
-    "Hyperledger.Aries.OpenApi.Server Alice": {
+    "Hyperledger.Aries.AspNetCore.Server Alice": {
       "commandName": "Project",
       "launchBrowser": false,
       "inspectUri": "{wsProtocol}://{url.hostname}:{url.port}/_framework/debug/ws-proxy?browser={browserInspectUri}",

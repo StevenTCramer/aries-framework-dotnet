@@ -1,4 +1,4 @@
-namespace Hyperledger.Aries.OpenApi.Features.Schemas
+namespace Hyperledger.Aries.AspNetCore.Features.Schemas
 {
   using Hyperledger.Aries.Agents;
   using Hyperledger.Aries.Features.IssueCredential;

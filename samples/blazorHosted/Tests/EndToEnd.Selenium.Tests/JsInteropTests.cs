@@ -1,8 +1,8 @@
-﻿namespace Hyperledger.Aries.OpenApi.EndToEnd.Tests
+﻿namespace Hyperledger.Aries.AspNetCore.EndToEnd.Tests
 {
   using OpenQA.Selenium;
   using FluentAssertions;
-  using Hyperledger.Aries.OpenApi.EndToEnd.Tests.Infrastructure;
+  using Hyperledger.Aries.AspNetCore.EndToEnd.Tests.Infrastructure;
 
   public class JsInteropTests : BaseTest
   {

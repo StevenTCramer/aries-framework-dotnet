@@ -1,9 +1,9 @@
-namespace Hyperledger.Aries.OpenApi.Features.Connections.Pages
+namespace Hyperledger.Aries.AspNetCore.Features.Connections.Pages
 {
   using System.Threading.Tasks;
-  using Hyperledger.Aries.OpenApi.Features.Bases;
+  using Hyperledger.Aries.AspNetCore.Features.Bases;
   using Microsoft.AspNetCore.Components;
-  using static Hyperledger.Aries.OpenApi.Features.Connections.ConnectionState;
+  using static Hyperledger.Aries.AspNetCore.Features.Connections.ConnectionState;
   using static BlazorState.Features.Routing.RouteState;
 
   public partial class Details : BaseComponent

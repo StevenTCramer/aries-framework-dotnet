@@ -1,7 +1,7 @@
-namespace Hyperledger.Aries.OpenApi.Features.Connections.Pages
+namespace Hyperledger.Aries.AspNetCore.Features.Connections.Pages
 {
-  using Hyperledger.Aries.OpenApi.Features.Bases;
-  using static Hyperledger.Aries.OpenApi.Features.Connections.ConnectionState;
+  using Hyperledger.Aries.AspNetCore.Features.Bases;
+  using static Hyperledger.Aries.AspNetCore.Features.Connections.ConnectionState;
   using System.Threading.Tasks;
 
   public partial class Index: BaseComponent

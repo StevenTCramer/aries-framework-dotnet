@@ -1,9 +1,9 @@
-namespace Hyperledger.Aries.OpenApi.Server
+namespace Hyperledger.Aries.AspNetCore.Server
 {
   using AutoMapper;
   using FluentValidation.AspNetCore;
-  using Hyperledger.Aries.OpenApi.Configuration;
-  using Hyperledger.Aries.OpenApi.Infrastructure;
+  using Hyperledger.Aries.AspNetCore.Configuration;
+  using Hyperledger.Aries.AspNetCore.Infrastructure;
   using Hyperledger.Aries.Storage;
   using Jdenticon.AspNetCore;
   using MediatR;

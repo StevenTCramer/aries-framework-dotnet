@@ -1,4 +1,4 @@
-﻿namespace Hyperledger.Aries.OpenApi.Client
+﻿namespace Hyperledger.Aries.AspNetCore.Client
 {
   public class AssemblyAnnotations
   {

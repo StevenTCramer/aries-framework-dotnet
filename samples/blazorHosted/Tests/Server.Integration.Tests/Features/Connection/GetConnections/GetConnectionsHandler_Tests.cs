@@ -2,9 +2,9 @@
 {
   using System.Threading.Tasks;
   using Microsoft.AspNetCore.Mvc.Testing;
-  using Hyperledger.Aries.OpenApi.Server.Integration.Tests.Infrastructure;
-  using Hyperledger.Aries.OpenApi.Features.Connections;
-  using Hyperledger.Aries.OpenApi.Server;
+  using Hyperledger.Aries.AspNetCore.Server.Integration.Tests.Infrastructure;
+  using Hyperledger.Aries.AspNetCore.Features.Connections;
+  using Hyperledger.Aries.AspNetCore.Server;
   using Newtonsoft.Json;
 
   public class Handle_Returns : BaseTest

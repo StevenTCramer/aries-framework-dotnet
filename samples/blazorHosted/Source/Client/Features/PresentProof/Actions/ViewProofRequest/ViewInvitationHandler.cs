@@ -1,11 +1,11 @@
-namespace Hyperledger.Aries.OpenApi.Features.PresentProofs
+namespace Hyperledger.Aries.AspNetCore.Features.PresentProofs
 {
   using BlazorState;
   using MediatR;
   using System.Net.Http;
   using System.Threading;
   using System.Threading.Tasks;
-  using Hyperledger.Aries.OpenApi.Features.Bases;
+  using Hyperledger.Aries.AspNetCore.Features.Bases;
   using Newtonsoft.Json;
   using System.Linq;
   using System.Net.Http.Json;

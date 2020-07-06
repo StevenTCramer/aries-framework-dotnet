@@ -1,8 +1,8 @@
-﻿namespace Hyperledger.Aries.OpenApi.Features.Schemas.Pages
+﻿namespace Hyperledger.Aries.AspNetCore.Features.Schemas.Pages
 {
   using BlazorState.Features.Routing;
   using System.Threading.Tasks;
-  using static Hyperledger.Aries.OpenApi.Features.Schemas.SchemaState;
+  using static Hyperledger.Aries.AspNetCore.Features.Schemas.SchemaState;
 
   public partial class Index
   {

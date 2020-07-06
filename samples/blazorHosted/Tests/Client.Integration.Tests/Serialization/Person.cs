@@ -1,4 +1,4 @@
-﻿namespace Hyperledger.Aries.OpenApi.JsonSerializer.Tests
+﻿namespace Hyperledger.Aries.AspNetCore.JsonSerializer.Tests
 {
   using System;
   internal class Person

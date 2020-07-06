@@ -1,4 +1,4 @@
-namespace Hyperledger.Aries.OpenApi.Client.Integration.Tests.Infrastructure
+namespace Hyperledger.Aries.AspNetCore.Client.Integration.Tests.Infrastructure
 {
   using BlazorState;
   using Fixie;
@@ -8,7 +8,7 @@ namespace Hyperledger.Aries.OpenApi.Client.Integration.Tests.Infrastructure
   using System.Net.Http;
   using System.Reflection;
   using System.Text.Json;
-  using Hyperledger.Aries.OpenApi.Features.ClientLoaders;
+  using Hyperledger.Aries.AspNetCore.Features.ClientLoaders;
 
 
   [NotTest]
@@ -97,7 +97,7 @@ namespace Hyperledger.Aries.OpenApi.Client.Integration.Tests.Infrastructure
       aServiceCollection.AddBlazorState
       (
         aOptions => aOptions.Assemblies =
-        new Assembly[] { typeof(Hyperledger.Aries.OpenApi.Client.Program).GetTypeInfo().Assembly }
+        new Assembly[] { typeof(Hyperledger.Aries.AspNetCore.Client.Program).GetTypeInfo().Assembly }
       );
 
       aServiceCollection.AddSingleton

@@ -2,7 +2,7 @@
 {
   using Hyperledger.Aries.AspNetCore;
   using Hyperledger.Aries.Configuration;
-  using Hyperledger.Aries.OpenApi.Configuration;
+  using Hyperledger.Aries.AspNetCore.Configuration;
   using Microsoft.AspNetCore.Builder;
   using Microsoft.Extensions.Options;
 

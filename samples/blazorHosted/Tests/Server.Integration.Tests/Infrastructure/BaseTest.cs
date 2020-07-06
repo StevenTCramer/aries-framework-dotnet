@@ -1,6 +1,6 @@
-namespace Hyperledger.Aries.OpenApi.Server.Integration.Tests.Infrastructure
+namespace Hyperledger.Aries.AspNetCore.Server.Integration.Tests.Infrastructure
 {
-  using Hyperledger.Aries.OpenApi.Server;
+  using Hyperledger.Aries.AspNetCore.Server;
   using FluentAssertions;
   using MediatR;
   using Microsoft.AspNetCore.Mvc.Testing;

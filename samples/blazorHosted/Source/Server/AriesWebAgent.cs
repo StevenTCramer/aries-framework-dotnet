@@ -1,4 +1,4 @@
-﻿namespace Hyperledger.Aries.OpenApi
+﻿namespace Hyperledger.Aries.AspNetCore
 {
   using Hyperledger.Aries.Agents;
   using System;

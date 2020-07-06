@@ -3,7 +3,7 @@
 //  using FluentAssertions;
 //  using FluentValidation.Results;
 //  using FluentValidation.TestHelper;
-//  using Hyperledger.Aries.OpenApi.Features.IssueCredentials;
+//  using Hyperledger.Aries.AspNetCore.Features.IssueCredentials;
 
 //  public class Validate_Should
 //  {

@@ -1,4 +1,4 @@
-namespace Hyperledger.Aries.OpenApi.Components
+namespace Hyperledger.Aries.AspNetCore.Components
 {
   using BlazorState.Services;
   using Microsoft.AspNetCore.Components;

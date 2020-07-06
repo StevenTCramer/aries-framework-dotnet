@@ -1,4 +1,4 @@
-namespace Hyperledger.Aries.OpenApi.Components
+namespace Hyperledger.Aries.AspNetCore.Components
 {
   using Jdenticon;
   using Microsoft.AspNetCore.Components;

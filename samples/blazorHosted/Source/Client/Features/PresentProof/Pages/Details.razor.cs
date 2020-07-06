@@ -1,6 +1,6 @@
-﻿namespace Hyperledger.Aries.OpenApi.Features.PresentProofs.Pages
+﻿namespace Hyperledger.Aries.AspNetCore.Features.PresentProofs.Pages
 {
-  using Hyperledger.Aries.OpenApi.Features.Bases;
+  using Hyperledger.Aries.AspNetCore.Features.Bases;
   using Hyperledger.Aries.Features.PresentProof;
   using Microsoft.AspNetCore.Components;
   using Newtonsoft.Json;

@@ -1,8 +1,8 @@
-﻿namespace Hyperledger.Aries.OpenApi.Features.Credentials.Pages
+﻿namespace Hyperledger.Aries.AspNetCore.Features.Credentials.Pages
 {
   using BlazorState.Features.Routing;
-  using Hyperledger.Aries.OpenApi.Features.Bases;
-  using static Hyperledger.Aries.OpenApi.Features.Credentials.CredentialState;
+  using Hyperledger.Aries.AspNetCore.Features.Bases;
+  using static Hyperledger.Aries.AspNetCore.Features.Credentials.CredentialState;
   using System.Threading.Tasks;
 
   public partial class Index : BaseComponent

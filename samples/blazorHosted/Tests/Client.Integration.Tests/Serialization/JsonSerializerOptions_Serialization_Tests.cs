@@ -3,7 +3,7 @@ namespace JsonSerializerOptions
   using FluentAssertions;
   using System;
   using System.Text.Json;
-  using Hyperledger.Aries.OpenApi.JsonSerializer.Tests;
+  using Hyperledger.Aries.AspNetCore.JsonSerializer.Tests;
 
   public class JsonSerializer_Should
   {

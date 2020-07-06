@@ -1,4 +1,4 @@
 ---
-uid: Hyperledger.Aries.OpenApi:Contribute
-title: Hyperledger.Aries.OpenApi Contribute
+uid: Hyperledger.Aries.AspNetCore:Contribute
+title: Hyperledger.Aries.AspNetCore Contribute
 ---

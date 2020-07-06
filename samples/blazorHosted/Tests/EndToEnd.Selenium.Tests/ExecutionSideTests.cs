@@ -1,7 +1,7 @@
-﻿namespace Hyperledger.Aries.OpenApi.EndToEnd.Tests
+﻿namespace Hyperledger.Aries.AspNetCore.EndToEnd.Tests
 {
   using OpenQA.Selenium;
-  using Hyperledger.Aries.OpenApi.EndToEnd.Tests.Infrastructure;
+  using Hyperledger.Aries.AspNetCore.EndToEnd.Tests.Infrastructure;
   using static Infrastructure.WaitAndAssert;
 
   public class ExecutionSideTests : BaseTest

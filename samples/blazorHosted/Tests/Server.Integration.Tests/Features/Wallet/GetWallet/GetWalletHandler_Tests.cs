@@ -1,8 +1,8 @@
 ﻿namespace GetWalletHandler
 {
-  using Hyperledger.Aries.OpenApi.Features.Wallets;
-  using Hyperledger.Aries.OpenApi.Server;
-  using Hyperledger.Aries.OpenApi.Server.Integration.Tests.Infrastructure;
+  using Hyperledger.Aries.AspNetCore.Features.Wallets;
+  using Hyperledger.Aries.AspNetCore.Server;
+  using Hyperledger.Aries.AspNetCore.Server.Integration.Tests.Infrastructure;
   using Microsoft.AspNetCore.Mvc.Testing;
   using Newtonsoft.Json;
   using System.Threading.Tasks;

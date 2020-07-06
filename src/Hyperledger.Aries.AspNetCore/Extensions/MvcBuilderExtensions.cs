@@ -2,8 +2,8 @@
 {
   using FluentValidation;
   using FluentValidation.AspNetCore;
-  using Hyperledger.Aries.OpenApi.Configuration;
-  using Hyperledger.Aries.OpenApi.Features.Bases;
+  using Hyperledger.Aries.AspNetCore.Configuration;
+  using Hyperledger.Aries.AspNetCore.Features.Bases;
   using MediatR;
   using Microsoft.AspNetCore.Mvc;
   using Microsoft.OpenApi.Models;

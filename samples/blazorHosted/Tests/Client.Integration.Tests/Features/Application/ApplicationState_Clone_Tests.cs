@@ -2,8 +2,8 @@ namespace ApplicationState_
 {
   using AnyClone;
   using FluentAssertions;
-  using Hyperledger.Aries.OpenApi.Features.Applications;
-  using Hyperledger.Aries.OpenApi.Client.Integration.Tests.Infrastructure;
+  using Hyperledger.Aries.AspNetCore.Features.Applications;
+  using Hyperledger.Aries.AspNetCore.Client.Integration.Tests.Infrastructure;
 
   public class Clone_Should : BaseTest
   {

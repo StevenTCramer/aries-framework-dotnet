@@ -1,8 +1,8 @@
 ﻿namespace GetConnectionEndpoint
 {
-  using Hyperledger.Aries.OpenApi.Features.Connections;
-  using Hyperledger.Aries.OpenApi.Server;
-  using Hyperledger.Aries.OpenApi.Server.Integration.Tests.Infrastructure;
+  using Hyperledger.Aries.AspNetCore.Features.Connections;
+  using Hyperledger.Aries.AspNetCore.Server;
+  using Hyperledger.Aries.AspNetCore.Server.Integration.Tests.Infrastructure;
   using FluentAssertions;
   using Microsoft.AspNetCore.Mvc.Testing;
   using Newtonsoft.Json;

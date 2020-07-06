@@ -1,4 +1,4 @@
-namespace Hyperledger.Aries.OpenApi.Features.BasicMessaging
+namespace Hyperledger.Aries.AspNetCore.Features.BasicMessaging
 {
   using Hyperledger.Aries.Agents;
   using Hyperledger.Aries.Configuration;

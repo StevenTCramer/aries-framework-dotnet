@@ -1,4 +1,4 @@
-namespace Hyperledger.Aries.OpenApi.Server
+namespace Hyperledger.Aries.AspNetCore.Server
 {
   using Microsoft.AspNetCore.Hosting;
 

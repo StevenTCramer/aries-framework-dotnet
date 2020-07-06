@@ -1,4 +1,4 @@
-﻿namespace Hyperledger.Aries.OpenApi.Features.Schemas
+﻿namespace Hyperledger.Aries.AspNetCore.Features.Schemas
 {
   using BlazorState;
   using Hyperledger.Aries.Models.Records;

@@ -1,4 +1,4 @@
-﻿namespace Hyperledger.Aries.OpenApi.Features.Credentials
+﻿namespace Hyperledger.Aries.AspNetCore.Features.Credentials
 {
   using BlazorState;
   using Hyperledger.Aries.Features.IssueCredential;

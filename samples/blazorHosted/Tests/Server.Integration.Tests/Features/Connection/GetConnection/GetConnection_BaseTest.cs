@@ -1,6 +1,6 @@
-﻿namespace Hyperledger.Aries.OpenApi.Server.Integration.Tests.Infrastructure
+﻿namespace Hyperledger.Aries.AspNetCore.Server.Integration.Tests.Infrastructure
 {
-  using Hyperledger.Aries.OpenApi.Features.Connections;
+  using Hyperledger.Aries.AspNetCore.Features.Connections;
   using FluentAssertions;
   using Hyperledger.Aries.Features.DidExchange;
   using System;

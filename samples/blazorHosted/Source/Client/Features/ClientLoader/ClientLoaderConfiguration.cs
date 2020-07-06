@@ -1,4 +1,4 @@
-﻿namespace Hyperledger.Aries.OpenApi.Features.ClientLoaders
+﻿namespace Hyperledger.Aries.AspNetCore.Features.ClientLoaders
 {
   using System;
 

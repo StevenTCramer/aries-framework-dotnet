@@ -3,10 +3,10 @@
 //  using System.Threading.Tasks;
 //  using System.Text.Json;
 //  using Microsoft.AspNetCore.Mvc.Testing;
-//  using Hyperledger.Aries.OpenApi.Server.Integration.Tests.Infrastructure;
-//  using Hyperledger.Aries.OpenApi.Server;
+//  using Hyperledger.Aries.AspNetCore.Server.Integration.Tests.Infrastructure;
+//  using Hyperledger.Aries.AspNetCore.Server;
 //  using FluentAssertions;
-//  using Hyperledger.Aries.OpenApi.Features.BasicMessaging;
+//  using Hyperledger.Aries.AspNetCore.Features.BasicMessaging;
 
 //  public class Handle_Returns : BaseTest
 //  {

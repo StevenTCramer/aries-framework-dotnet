@@ -1,6 +1,6 @@
-namespace Hyperledger.Aries.OpenApi.Features.Credentials
+namespace Hyperledger.Aries.AspNetCore.Features.Credentials
 {
-  using Hyperledger.Aries.OpenApi.Features.Bases;
+  using Hyperledger.Aries.AspNetCore.Features.Bases;
   using Microsoft.AspNetCore.Mvc;
   using Swashbuckle.AspNetCore.Annotations;
   using System.Net;

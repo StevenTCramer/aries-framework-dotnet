@@ -1,10 +1,10 @@
-namespace Hyperledger.Aries.OpenApi.Features.PresentProofs
+namespace Hyperledger.Aries.AspNetCore.Features.PresentProofs
 {
   using Microsoft.AspNetCore.Mvc;
   using Swashbuckle.AspNetCore.Annotations;
   using System.Net;
   using System.Threading.Tasks;
-  using Hyperledger.Aries.OpenApi.Features.Bases;
+  using Hyperledger.Aries.AspNetCore.Features.Bases;
 
   public class GetProofEndpoint : BaseEndpoint<GetProofRequest, GetProofResponse>
   {

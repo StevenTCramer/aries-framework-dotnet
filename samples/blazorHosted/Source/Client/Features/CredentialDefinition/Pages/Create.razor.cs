@@ -1,10 +1,10 @@
-﻿namespace Hyperledger.Aries.OpenApi.Features.CredentialDefinitions.Pages
+﻿namespace Hyperledger.Aries.AspNetCore.Features.CredentialDefinitions.Pages
 {
-  using Hyperledger.Aries.OpenApi.Features.Bases;
+  using Hyperledger.Aries.AspNetCore.Features.Bases;
   using System.Linq;
   using System.Threading.Tasks;
-  using static Hyperledger.Aries.OpenApi.Features.CredentialDefinitions.CredentialDefinitionState;
-  using static Hyperledger.Aries.OpenApi.Features.Schemas.SchemaState;
+  using static Hyperledger.Aries.AspNetCore.Features.CredentialDefinitions.CredentialDefinitionState;
+  using static Hyperledger.Aries.AspNetCore.Features.Schemas.SchemaState;
   using static BlazorState.Features.Routing.RouteState;
 
   public partial class Create : BaseComponent

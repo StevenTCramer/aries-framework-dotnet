@@ -1,7 +1,7 @@
-﻿//namespace Hyperledger.Aries.OpenApi.Features.Credentials
+﻿//namespace Hyperledger.Aries.AspNetCore.Features.Credentials
 //{
-//  using Hyperledger.Aries.OpenApi.Features.Bases;
-//  using Hyperledger.Aries.OpenApi.Features.CredentialDefinitions;
+//  using Hyperledger.Aries.AspNetCore.Features.Bases;
+//  using Hyperledger.Aries.AspNetCore.Features.CredentialDefinitions;
 
 //  internal partial class CredentialState
 //  {

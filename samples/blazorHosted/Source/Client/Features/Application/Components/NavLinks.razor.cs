@@ -1,4 +1,4 @@
-﻿namespace Hyperledger.Aries.OpenApi.Features.Applications.Components
+﻿namespace Hyperledger.Aries.AspNetCore.Features.Applications.Components
 {
   public partial class NavLinks
   {

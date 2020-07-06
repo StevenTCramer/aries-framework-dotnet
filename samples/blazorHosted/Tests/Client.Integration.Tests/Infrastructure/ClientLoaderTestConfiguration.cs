@@ -1,7 +1,7 @@
-namespace Hyperledger.Aries.OpenApi.Client.Integration.Tests.Infrastructure
+namespace Hyperledger.Aries.AspNetCore.Client.Integration.Tests.Infrastructure
 {
   using System;
-  using Hyperledger.Aries.OpenApi.Features.ClientLoaders;
+  using Hyperledger.Aries.AspNetCore.Features.ClientLoaders;
 
   [NotTest]
   public class ClientLoaderTestConfiguration : IClientLoaderConfiguration

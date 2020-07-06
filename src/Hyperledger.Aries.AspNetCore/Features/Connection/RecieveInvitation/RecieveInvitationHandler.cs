@@ -1,4 +1,4 @@
-namespace Hyperledger.Aries.OpenApi.Features.Connections
+namespace Hyperledger.Aries.AspNetCore.Features.Connections
 {
   using Hyperledger.Aries.Features.DidExchange;
   using Hyperledger.Aries.Utils;

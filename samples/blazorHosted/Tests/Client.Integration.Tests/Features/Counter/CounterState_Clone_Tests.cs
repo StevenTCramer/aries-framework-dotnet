@@ -2,8 +2,8 @@ namespace CounterState
 {
   using AnyClone;
   using FluentAssertions;
-  using Hyperledger.Aries.OpenApi.Features.Counters;
-  using Hyperledger.Aries.OpenApi.Client.Integration.Tests.Infrastructure;
+  using Hyperledger.Aries.AspNetCore.Features.Counters;
+  using Hyperledger.Aries.AspNetCore.Client.Integration.Tests.Infrastructure;
 
   public class Clone_Should : BaseTest
   {

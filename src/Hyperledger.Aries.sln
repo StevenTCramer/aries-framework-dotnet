@@ -25,7 +25,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hyperledger.Aries.Routing.M
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hyperledger.Aries.Routing.Edge", "Hyperledger.Aries.Routing.Edge\Hyperledger.Aries.Routing.Edge.csproj", "{B76E800A-C3C1-4E42-AC60-24F70AF304BE}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hyperledger.Aries.OpenApi.Contracts", "Hyperledger.Aries.OpenApi.Contracts\Hyperledger.Aries.OpenApi.Contracts.csproj", "{C35CAB46-4192-4BED-BB1A-0956B5136E96}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hyperledger.Aries.AspNetCore.Contracts", "Hyperledger.Aries.AspNetCore.Contracts\Hyperledger.Aries.AspNetCore.Contracts.csproj", "{C35CAB46-4192-4BED-BB1A-0956B5136E96}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

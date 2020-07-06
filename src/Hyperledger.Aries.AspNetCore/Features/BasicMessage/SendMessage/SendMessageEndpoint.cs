@@ -1,10 +1,10 @@
-namespace Hyperledger.Aries.OpenApi.Features.BasicMessaging
+namespace Hyperledger.Aries.AspNetCore.Features.BasicMessaging
 {
   using Microsoft.AspNetCore.Mvc;
   using Swashbuckle.AspNetCore.Annotations;
   using System.Net;
   using System.Threading.Tasks;
-  using Hyperledger.Aries.OpenApi.Features.Bases;
+  using Hyperledger.Aries.AspNetCore.Features.Bases;
 
   public class SendMessageEndpoint : BaseEndpoint<SendMessageRequest, SendMessageResponse>
   {

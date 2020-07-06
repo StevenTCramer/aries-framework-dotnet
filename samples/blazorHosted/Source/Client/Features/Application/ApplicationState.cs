@@ -1,4 +1,4 @@
-namespace Hyperledger.Aries.OpenApi.Features.Applications
+namespace Hyperledger.Aries.AspNetCore.Features.Applications
 {
   using BlazorState;
 
@@ -14,7 +14,7 @@ namespace Hyperledger.Aries.OpenApi.Features.Applications
     public override void Initialize()
     {
       IsMenuExpanded = true;
-      Name = "Hyperledger.Aries.OpenApi";
+      Name = "Hyperledger.Aries.AspNetCore";
       Logo = "/images/logo.png";
     }
   }

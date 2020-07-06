@@ -1,7 +1,7 @@
-namespace Hyperledger.Aries.OpenApi.Features.Counters.Components
+namespace Hyperledger.Aries.AspNetCore.Features.Counters.Components
 {
   using System.Threading.Tasks;
-  using static Hyperledger.Aries.OpenApi.Features.Counters.CounterState;
+  using static Hyperledger.Aries.AspNetCore.Features.Counters.CounterState;
 
   public partial class Counter
   {

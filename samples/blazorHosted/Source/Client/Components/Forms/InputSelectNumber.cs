@@ -1,4 +1,4 @@
-﻿namespace Hyperledger.Aries.OpenApi.Components.Forms
+﻿namespace Hyperledger.Aries.AspNetCore.Components.Forms
 {
   using Microsoft.AspNetCore.Components.Forms;
 

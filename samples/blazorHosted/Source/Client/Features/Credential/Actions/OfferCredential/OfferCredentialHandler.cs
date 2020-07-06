@@ -1,7 +1,7 @@
-﻿namespace Hyperledger.Aries.OpenApi.Features.Credentials
+﻿namespace Hyperledger.Aries.AspNetCore.Features.Credentials
 {
-  using Hyperledger.Aries.OpenApi.Features.Bases;
-  using Hyperledger.Aries.OpenApi.Features.IssueCredentials;
+  using Hyperledger.Aries.AspNetCore.Features.Bases;
+  using Hyperledger.Aries.AspNetCore.Features.IssueCredentials;
   using BlazorState;
   using MediatR;
   using System.Net.Http;

@@ -1,9 +1,9 @@
-﻿namespace Hyperledger.Aries.OpenApi.EndToEnd.Tests
+﻿namespace Hyperledger.Aries.AspNetCore.EndToEnd.Tests
 {
   using Fixie;
   using Microsoft.Extensions.DependencyInjection;
   using System;
-  using Hyperledger.Aries.OpenApi.EndToEnd.Tests.Infrastructure;
+  using Hyperledger.Aries.AspNetCore.EndToEnd.Tests.Infrastructure;
 
   public class TestingConvention : Discovery, Execution, IDisposable
   {

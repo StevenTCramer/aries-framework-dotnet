@@ -1,5 +1,5 @@
 ﻿//#nullable enable
-//namespace Hyperledger.Aries.OpenApi.Extensions
+//namespace Hyperledger.Aries.AspNetCore.Extensions
 //{
 //  using System;
 //  using System.Collections.Generic;

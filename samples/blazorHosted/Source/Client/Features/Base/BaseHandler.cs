@@ -1,13 +1,13 @@
-namespace Hyperledger.Aries.OpenApi.Features.Bases
+namespace Hyperledger.Aries.AspNetCore.Features.Bases
 {
-  using Hyperledger.Aries.OpenApi.Features.Applications;
-  using Hyperledger.Aries.OpenApi.Features.Connections;
-  using Hyperledger.Aries.OpenApi.Features.Counters;
-  using Hyperledger.Aries.OpenApi.Features.CredentialDefinitions;
-  using Hyperledger.Aries.OpenApi.Features.Credentials;
-  using Hyperledger.Aries.OpenApi.Features.PresentProofs;
-  using Hyperledger.Aries.OpenApi.Features.Schemas;
-  using Hyperledger.Aries.OpenApi.Features.Wallets;
+  using Hyperledger.Aries.AspNetCore.Features.Applications;
+  using Hyperledger.Aries.AspNetCore.Features.Connections;
+  using Hyperledger.Aries.AspNetCore.Features.Counters;
+  using Hyperledger.Aries.AspNetCore.Features.CredentialDefinitions;
+  using Hyperledger.Aries.AspNetCore.Features.Credentials;
+  using Hyperledger.Aries.AspNetCore.Features.PresentProofs;
+  using Hyperledger.Aries.AspNetCore.Features.Schemas;
+  using Hyperledger.Aries.AspNetCore.Features.Wallets;
   using BlazorState;
 
   /// <summary>

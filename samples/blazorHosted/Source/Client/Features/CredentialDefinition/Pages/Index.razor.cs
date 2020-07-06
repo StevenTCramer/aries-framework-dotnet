@@ -1,9 +1,9 @@
-﻿namespace Hyperledger.Aries.OpenApi.Features.CredentialDefinitions.Pages
+﻿namespace Hyperledger.Aries.AspNetCore.Features.CredentialDefinitions.Pages
 {
   using BlazorState.Features.Routing;
   using System.Threading.Tasks;
-  using static Hyperledger.Aries.OpenApi.Features.CredentialDefinitions.CredentialDefinitionState;
-  using static Hyperledger.Aries.OpenApi.Features.Schemas.SchemaState;
+  using static Hyperledger.Aries.AspNetCore.Features.CredentialDefinitions.CredentialDefinitionState;
+  using static Hyperledger.Aries.AspNetCore.Features.Schemas.SchemaState;
 
   public partial class Index
   {

@@ -1,6 +1,6 @@
-﻿namespace Hyperledger.Aries.OpenApi.Features.Schemas
+﻿namespace Hyperledger.Aries.AspNetCore.Features.Schemas
 {
-  using Hyperledger.Aries.OpenApi.Features.Bases;
+  using Hyperledger.Aries.AspNetCore.Features.Bases;
 
   internal partial class SchemaState
   {

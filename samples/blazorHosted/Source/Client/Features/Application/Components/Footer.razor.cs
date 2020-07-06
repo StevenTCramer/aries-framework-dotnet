@@ -1,6 +1,6 @@
-namespace Hyperledger.Aries.OpenApi.Features.Applications.Components
+namespace Hyperledger.Aries.AspNetCore.Features.Applications.Components
 {
-  using Hyperledger.Aries.OpenApi.Features.Bases;
+  using Hyperledger.Aries.AspNetCore.Features.Bases;
 
   public partial class Footer: BaseComponent
   {

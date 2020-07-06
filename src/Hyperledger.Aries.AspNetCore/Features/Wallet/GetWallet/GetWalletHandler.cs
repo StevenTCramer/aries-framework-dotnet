@@ -1,4 +1,4 @@
-namespace Hyperledger.Aries.OpenApi.Features.Wallets
+namespace Hyperledger.Aries.AspNetCore.Features.Wallets
 {
   using Hyperledger.Aries.Configuration;
   using Hyperledger.Aries.Storage;

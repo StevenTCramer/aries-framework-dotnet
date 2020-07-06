@@ -2,9 +2,9 @@ namespace CounterState
 {
   using FluentAssertions;
   using System.Threading.Tasks;
-  using Hyperledger.Aries.OpenApi.Features.Counters;
-  using Hyperledger.Aries.OpenApi.Client.Integration.Tests.Infrastructure;
-  using static Hyperledger.Aries.OpenApi.Features.Counters.CounterState;
+  using Hyperledger.Aries.AspNetCore.Features.Counters;
+  using Hyperledger.Aries.AspNetCore.Client.Integration.Tests.Infrastructure;
+  using static Hyperledger.Aries.AspNetCore.Features.Counters.CounterState;
 
   public class IncrementCounterAction_Should : BaseTest
   {

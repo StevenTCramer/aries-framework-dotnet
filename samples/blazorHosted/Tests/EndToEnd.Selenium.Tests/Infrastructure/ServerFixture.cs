@@ -1,4 +1,4 @@
-﻿namespace Hyperledger.Aries.OpenApi.EndToEnd.Tests.Infrastructure
+﻿namespace Hyperledger.Aries.AspNetCore.EndToEnd.Tests.Infrastructure
 {
   using Microsoft.AspNetCore.Hosting;
   using Microsoft.AspNetCore.Hosting.Server;
@@ -10,7 +10,7 @@
   using System.IO;
   using System.Linq;
   using System.Threading;
-  using Hyperledger.Aries.OpenApi.Features.ClientLoaders;
+  using Hyperledger.Aries.AspNetCore.Features.ClientLoaders;
 
   public class ServerFixture
   {

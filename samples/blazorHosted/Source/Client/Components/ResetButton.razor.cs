@@ -1,7 +1,7 @@
-namespace Hyperledger.Aries.OpenApi.Components
+namespace Hyperledger.Aries.AspNetCore.Components
 {
-  using Hyperledger.Aries.OpenApi.Features.Bases;
-  using static Hyperledger.Aries.OpenApi.Features.Applications.ApplicationState;
+  using Hyperledger.Aries.AspNetCore.Features.Bases;
+  using static Hyperledger.Aries.AspNetCore.Features.Applications.ApplicationState;
 
   public partial class ResetButton:BaseComponent
   {

@@ -1,7 +1,7 @@
 ﻿namespace AliceWebApplicationFactory_
 {
-  using Hyperledger.Aries.OpenApi.Configuration;
-  using Hyperledger.Aries.OpenApi.Server.Integration.Tests.Infrastructure;
+  using Hyperledger.Aries.AspNetCore.Configuration;
+  using Hyperledger.Aries.AspNetCore.Server.Integration.Tests.Infrastructure;
   using FluentAssertions;
   using Microsoft.Extensions.DependencyInjection;
   using Microsoft.Extensions.Options;

@@ -1,4 +1,4 @@
-﻿namespace Hyperledger.Aries.OpenApi.Configuration
+﻿namespace Hyperledger.Aries.AspNetCore.Configuration
 {
   public class AgentSettings
   {

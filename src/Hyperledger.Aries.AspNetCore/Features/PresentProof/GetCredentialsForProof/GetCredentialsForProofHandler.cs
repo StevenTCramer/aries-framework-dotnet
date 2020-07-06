@@ -1,4 +1,4 @@
-namespace Hyperledger.Aries.OpenApi.Features.PresentProofs
+namespace Hyperledger.Aries.AspNetCore.Features.PresentProofs
 {
   using Hyperledger.Aries.Agents;
   using Hyperledger.Aries.Features.IssueCredential;

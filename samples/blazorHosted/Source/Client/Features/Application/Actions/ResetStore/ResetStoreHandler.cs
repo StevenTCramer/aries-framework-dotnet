@@ -1,11 +1,11 @@
-namespace Hyperledger.Aries.OpenApi.Features.Applications
+namespace Hyperledger.Aries.AspNetCore.Features.Applications
 {
   using BlazorState;
   using MediatR;
   using System.Threading;
   using System.Threading.Tasks;
   using static BlazorState.Features.Routing.RouteState;
-  using static Hyperledger.Aries.OpenApi.Features.Applications.ApplicationState;
+  using static Hyperledger.Aries.AspNetCore.Features.Applications.ApplicationState;
 
   internal class ResetStoreHandler : IRequestHandler<ResetStoreAction>
   {

@@ -1,11 +1,11 @@
-﻿namespace Hyperledger.Aries.OpenApi.Features.Connections.Components
+﻿namespace Hyperledger.Aries.AspNetCore.Features.Connections.Components
 {
-  using Hyperledger.Aries.OpenApi.Features.Bases;
-  using Hyperledger.Aries.OpenApi.Features.Connections;
+  using Hyperledger.Aries.AspNetCore.Features.Bases;
+  using Hyperledger.Aries.AspNetCore.Features.Connections;
   using Hyperledger.Aries.Features.DidExchange;
   using Microsoft.AspNetCore.Components;
   using System.Threading.Tasks;
-  using static Hyperledger.Aries.OpenApi.Features.Connections.ConnectionState;
+  using static Hyperledger.Aries.AspNetCore.Features.Connections.ConnectionState;
 
   public partial class Details : BaseComponent
   {

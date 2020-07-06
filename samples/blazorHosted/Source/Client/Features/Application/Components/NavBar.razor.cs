@@ -1,6 +1,6 @@
-namespace Hyperledger.Aries.OpenApi.Features.Applications.Components
+namespace Hyperledger.Aries.AspNetCore.Features.Applications.Components
 {
-  using static Hyperledger.Aries.OpenApi.Features.Applications.ApplicationState;
+  using static Hyperledger.Aries.AspNetCore.Features.Applications.ApplicationState;
 
   public partial class NavBar
   {
