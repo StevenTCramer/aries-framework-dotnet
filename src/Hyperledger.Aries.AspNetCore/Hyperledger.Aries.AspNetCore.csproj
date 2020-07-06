@@ -24,7 +24,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Hyperledger.Aries.OpenApi.Contracts\Hyperledger.Aries.OpenApi.Contracts.csproj" />
+    <ProjectReference Include="..\Hyperledger.Aries.OpenApi.Contracts\Hyperledger.Aries.AspNetCore.Contracts.csproj" />
     <ProjectReference Include="..\Hyperledger.Aries\Hyperledger.Aries.csproj" />
   </ItemGroup>
 </Project>
