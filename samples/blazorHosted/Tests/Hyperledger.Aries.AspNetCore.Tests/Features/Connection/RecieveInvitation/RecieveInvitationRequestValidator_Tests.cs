@@ -1,30 +1,50 @@
-﻿//namespace RecieveInvitationRequestValidator_
-//{
-//  using FluentAssertions;
-//  using FluentValidation.Results;
-//  using FluentValidation.TestHelper;
-//  using Hyperledger.Aries.AspNetCore.Features.Connections;
+﻿namespace RecieveInvitationRequestValidator_
+{
+  using FluentAssertions;
+  using FluentValidation.Results;
+  using FluentValidation.TestHelper;
+  using Hyperledger.Aries.AspNetCore.Features.Connections;
+  using Hyperledger.Aries.AspNetCore.Server.Integration.Tests.Infrastructure;
+  using Microsoft.AspNetCore.Mvc.Testing;
+  using Newtonsoft.Json;
 
-//  public class Validate_Should
-//  {
-//    private RecieveInvitationRequestValidator RecieveInvitationRequestValidator { get; set; }
+  public class Validate_Should: BaseTest
+  {
+    private RecieveInvitationRequestValidator RecieveInvitationRequestValidator { get; set; }
+    private RecieveInvitationRequest RecieveInvitationRequest { get; set; }
 
-//    public void Be_Valid()
-//    {
-//      var __requestName__Request = new RecieveInvitationRequest
-//      {
-//        // Set Valid values here
-//        Days = 5
-//      };
+    public Validate_Should
+    (
+      AliceWebApplicationFactory aAliceWebApplicationFactory,
+      JsonSerializerSettings aJsonSerializerSettings
+    ) : base(aAliceWebApplicationFactory, aJsonSerializerSettings)
+    {
+      var recieveInvitationRequest = CreateValidRecieveInvitationRequest();
+    }
 
-//      ValidationResult validationResult = RecieveInvitationRequestValidator.TestValidate(__requestName__Request);
+    public void Be_Valid()
+    {
+      ValidationResult validationResult = RecieveInvitationRequestValidator.TestValidate(RecieveInvitationRequest);
 
-//      validationResult.IsValid.Should().BeTrue();
-//    }
+      validationResult.IsValid.Should().BeTrue();
+    }
 
-//    public void Have_error_when_Days_are_negative() => RecieveInvitationRequestValidator
-//      .ShouldHaveValidationErrorFor(aRecieveInvitationRequest => aRecieveInvitationRequest.Days, -1);
+    public void Have_error_when_InvitationDetails_is_empty() => RecieveInvitationRequestValidator
+      .ShouldHaveValidationErrorFor
+      (
+        aRecieveInvitationRequest => aRecieveInvitationRequest.InvitationDetails, 
+        string.Empty
+      );
 
-//    public void Setup() => RecieveInvitationRequestValidator = new RecieveInvitationRequestValidator();
-//  }
-//}
+    public void Have_error_when_InvitationDetails_is_null()
+    {
+      RecieveInvitationRequest.InvitationDetails = null;
+      RecieveInvitationRequestValidator
+        .ShouldHaveValidationErrorFor
+        (
+          aRecieveInvitationRequest => aRecieveInvitationRequest.InvitationDetails,
+          RecieveInvitationRequest
+        );
+    }
+  }
+}
