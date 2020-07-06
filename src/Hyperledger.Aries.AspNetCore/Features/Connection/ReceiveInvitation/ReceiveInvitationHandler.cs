@@ -9,21 +9,21 @@ namespace Hyperledger.Aries.AspNetCore.Features.Connections
   using System.Threading;
   using System.Threading.Tasks;
   
-  public class RecieveInvitationHandler : IRequestHandler<RecieveInvitationRequest, RecieveInvitationResponse>
+  public class ReceiveInvitationHandler : IRequestHandler<ReceiveInvitationRequest, ReceiveInvitationResponse>
   {
 
-    public async Task<RecieveInvitationResponse> Handle
+    public async Task<ReceiveInvitationResponse> Handle
     (
-      RecieveInvitationRequest aRecieveInvitationRequest,
+      ReceiveInvitationRequest aReceiveInvitationRequest,
       CancellationToken aCancellationToken
     )
     {
       ConnectionInvitationMessage connectionInvitationMessage = 
         MessageUtils
-          .DecodeMessageFromUrlFormat<ConnectionInvitationMessage>(aRecieveInvitationRequest.InvitationDetails);
+          .DecodeMessageFromUrlFormat<ConnectionInvitationMessage>(aReceiveInvitationRequest.InvitationDetails);
 
       var response = 
-        new RecieveInvitationResponse(aRecieveInvitationRequest.CorrelationId, connectionInvitationMessage);
+        new ReceiveInvitationResponse(aReceiveInvitationRequest.CorrelationId, connectionInvitationMessage);
       
       return await Task.Run(() => response);
     }
