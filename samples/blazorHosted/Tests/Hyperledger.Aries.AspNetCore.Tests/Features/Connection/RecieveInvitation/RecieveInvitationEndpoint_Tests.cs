@@ -1,4 +1,4 @@
-﻿//namespace RecieveInvitationEndpoint
+﻿//namespace ReceiveInvitationEndpoint
 //{
 //  using FluentAssertions;
 //  using Microsoft.AspNetCore.Mvc.Testing;
@@ -12,7 +12,7 @@
 
 //  public class Returns : BaseTest
 //  {
-//    private readonly RecieveInvitationRequest RecieveInvitationRequest;
+//    private readonly ReceiveInvitationRequest ReceiveInvitationRequest;
 
 //    public Returns
 //    (
@@ -20,34 +20,34 @@
 //      JsonSerializerOptions aJsonSerializerOptions
 //    ) : base(aWebApplicationFactory, aJsonSerializerOptions)
 //    {
-//      RecieveInvitationRequest = new RecieveInvitationRequest { Days = 10 };
+//      ReceiveInvitationRequest = new ReceiveInvitationRequest { Days = 10 };
 //    }
 
-//    public async Task RecieveInvitationResponse()
+//    public async Task ReceiveInvitationResponse()
 //    {
-//      RecieveInvitationResponse RecieveInvitationResponse =
-//        await GetJsonAsync<RecieveInvitationResponse>(RecieveInvitationRequest.GetRoute());
+//      ReceiveInvitationResponse ReceiveInvitationResponse =
+//        await GetJsonAsync<ReceiveInvitationResponse>(ReceiveInvitationRequest.GetRoute());
 
-//      ValidateRecieveInvitationResponse(RecieveInvitationResponse);
+//      ValidateReceiveInvitationResponse(ReceiveInvitationResponse);
 //    }
 
 //    public async Task ValidationError()
 //    {
 //      // Set invalid value
-//      RecieveInvitationRequest.Days = -1;
+//      ReceiveInvitationRequest.Days = -1;
 
-//      HttpResponseMessage httpResponseMessage = await HttpClient.GetAsync(RecieveInvitationRequest.GetRoute());
+//      HttpResponseMessage httpResponseMessage = await HttpClient.GetAsync(ReceiveInvitationRequest.GetRoute());
 
 //      string json = await httpResponseMessage.Content.ReadAsStringAsync();
 
 //      httpResponseMessage.StatusCode.Should().Be(HttpStatusCode.BadRequest);
 //      json.Should().Contain("errors");
-//      json.Should().Contain(nameof(RecieveInvitationRequest.Days));
+//      json.Should().Contain(nameof(ReceiveInvitationRequest.Days));
 //    }
 
-//    private void ValidateRecieveInvitationResponse(RecieveInvitationResponse aRecieveInvitationResponse)
+//    private void ValidateReceiveInvitationResponse(ReceiveInvitationResponse aReceiveInvitationResponse)
 //    {
-//      aRecieveInvitationResponse.CorrelationId.Should().Be(RecieveInvitationRequest.CorrelationId);
+//      aReceiveInvitationResponse.CorrelationId.Should().Be(ReceiveInvitationRequest.CorrelationId);
 //      // check Other properties here
 //    }
 //  }

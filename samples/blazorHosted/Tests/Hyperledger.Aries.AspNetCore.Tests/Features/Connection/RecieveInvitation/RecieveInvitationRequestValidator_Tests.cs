@@ -1,4 +1,4 @@
-﻿namespace RecieveInvitationRequestValidator_
+﻿namespace ReceiveInvitationRequestValidator_
 {
   using FluentAssertions;
   using FluentValidation.Results;
@@ -10,8 +10,8 @@
 
   public class Validate_Should: BaseTest
   {
-    private RecieveInvitationRequestValidator RecieveInvitationRequestValidator { get; set; }
-    private RecieveInvitationRequest RecieveInvitationRequest { get; set; }
+    private ReceiveInvitationRequestValidator ReceiveInvitationRequestValidator { get; set; }
+    private ReceiveInvitationRequest ReceiveInvitationRequest { get; set; }
 
     public Validate_Should
     (
@@ -19,36 +19,36 @@
       JsonSerializerSettings aJsonSerializerSettings
     ) : base(aAliceWebApplicationFactory, aJsonSerializerSettings)
     {
-      RecieveInvitationRequestValidator = new RecieveInvitationRequestValidator();
-      RecieveInvitationRequest = CreateValidRecieveInvitationRequest();
+      ReceiveInvitationRequestValidator = new ReceiveInvitationRequestValidator();
+      ReceiveInvitationRequest = CreateValidReceiveInvitationRequest();
     }
 
     public void Be_Valid()
     {
-      ValidationResult validationResult = RecieveInvitationRequestValidator.TestValidate(RecieveInvitationRequest);
+      ValidationResult validationResult = ReceiveInvitationRequestValidator.TestValidate(ReceiveInvitationRequest);
 
       validationResult.IsValid.Should().BeTrue();
     }
 
     public void Have_error_when_InvitationDetails_is_empty()
     {
-      RecieveInvitationRequest.InvitationDetails = "";
-      RecieveInvitationRequestValidator
+      ReceiveInvitationRequest.InvitationDetails = "";
+      ReceiveInvitationRequestValidator
         .ShouldHaveValidationErrorFor
         (
-          aRecieveInvitationRequest => aRecieveInvitationRequest.InvitationDetails,
-          RecieveInvitationRequest
+          aReceiveInvitationRequest => aReceiveInvitationRequest.InvitationDetails,
+          ReceiveInvitationRequest
         );
     }
 
     public void Have_error_when_InvitationDetails_is_null()
     {
-      RecieveInvitationRequest.InvitationDetails = null;
-      RecieveInvitationRequestValidator
+      ReceiveInvitationRequest.InvitationDetails = null;
+      ReceiveInvitationRequestValidator
         .ShouldHaveValidationErrorFor
         (
-          aRecieveInvitationRequest => aRecieveInvitationRequest.InvitationDetails,
-          RecieveInvitationRequest
+          aReceiveInvitationRequest => aReceiveInvitationRequest.InvitationDetails,
+          ReceiveInvitationRequest
         );
     }
   }

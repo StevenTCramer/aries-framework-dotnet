@@ -1,4 +1,4 @@
-﻿namespace RecieveInvitationHandler
+﻿namespace ReceiveInvitationHandler
 {
   using System.Threading.Tasks;
   using Hyperledger.Aries.AspNetCore.Server.Integration.Tests.Infrastructure;
@@ -9,7 +9,7 @@
 
   public class Handle_Returns : BaseTest
   {
-    private readonly RecieveInvitationRequest RecieveInvitationRequest;
+    private readonly ReceiveInvitationRequest ReceiveInvitationRequest;
 
     public Handle_Returns
     (
@@ -17,14 +17,14 @@
       JsonSerializerSettings aJsonSerializerSettings
     ) : base(aAliceWebApplicationFactory, aJsonSerializerSettings)
     {
-      RecieveInvitationRequest = CreateValidRecieveInvitationRequest();
+      ReceiveInvitationRequest = CreateValidReceiveInvitationRequest();
     }
 
-    public async Task RecieveInvitationResponse()
+    public async Task ReceiveInvitationResponse()
     {
-      RecieveInvitationResponse recieveInvitationResponse = await Send(RecieveInvitationRequest);
+      ReceiveInvitationResponse receiveInvitationResponse = await Send(ReceiveInvitationRequest);
 
-      ValidateRecieveInvitationResponse(RecieveInvitationRequest, recieveInvitationResponse);
+      ValidateReceiveInvitationResponse(ReceiveInvitationRequest, receiveInvitationResponse);
     }
 
     public async Task Setup()
