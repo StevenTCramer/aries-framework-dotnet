@@ -11,9 +11,9 @@ namespace Hyperledger.Aries.AspNetCore.Features.Connections
 
     internal override string GetRoute() => $"{RouteTemplate}?{nameof(CorrelationId)}={CorrelationId}";
 
-        public RecieveInvitationRequest(string invitationDetails)
-        {
-            InvitationDetails = invitationDetails;
-        }
+    public RecieveInvitationRequest(string aInvitationDetails)
+    {
+      InvitationDetails = aInvitationDetails;
     }
+  }
 }
