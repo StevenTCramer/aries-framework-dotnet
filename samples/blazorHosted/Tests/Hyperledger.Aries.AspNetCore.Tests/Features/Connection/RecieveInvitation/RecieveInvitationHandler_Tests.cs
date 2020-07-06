@@ -1,38 +1,35 @@
-﻿//namespace RecieveInvitationHandler
-//{
-//  using System.Threading.Tasks;
-//  using System.Text.Json;
-//  using Microsoft.AspNetCore.Mvc.Testing;
-//  using Hyperledger.Aries.AspNetCore.Server.Integration.Tests.Infrastructure;
-//  using Hyperledger.Aries.AspNetCore.Features.Connections;
-//  using Hyperledger.Aries.AspNetCore.Server;
-//  using FluentAssertions;
+﻿namespace RecieveInvitationHandler
+{
+  using System.Threading.Tasks;
+  using Hyperledger.Aries.AspNetCore.Server.Integration.Tests.Infrastructure;
+  using Hyperledger.Aries.AspNetCore.Features.Connections;
+  using FluentAssertions;
+  using Newtonsoft.Json;
+  using Hyperledger.Aries.Features.DidExchange;
 
-//  public class Handle_Returns : BaseTest
-//  {
-//    private readonly RecieveInvitationRequest RecieveInvitationRequest;
+  public class Handle_Returns : BaseTest
+  {
+    private readonly RecieveInvitationRequest RecieveInvitationRequest;
 
-//    public Handle_Returns
-//    (
-//      WebApplicationFactory<Startup> aWebApplicationFactory,
-//      JsonSerializerOptions aJsonSerializerOptions
-//    ) : base(aWebApplicationFactory, aJsonSerializerOptions)
-//    {
-//      RecieveInvitationRequest = new RecieveInvitationRequest { Days = 10 };
-//    }
+    public Handle_Returns
+    (
+      AliceWebApplicationFactory aAliceWebApplicationFactory,
+      JsonSerializerSettings aJsonSerializerSettings
+    ) : base(aAliceWebApplicationFactory, aJsonSerializerSettings)
+    {
+      RecieveInvitationRequest = CreateValidRecieveInvitationRequest();
+    }
 
-//    public async Task RecieveInvitationResponse()
-//    {
-//      RecieveInvitationResponse RecieveInvitationResponse = await Send(RecieveInvitationRequest);
+    public async Task RecieveInvitationResponse()
+    {
+      RecieveInvitationResponse recieveInvitationResponse = await Send(RecieveInvitationRequest);
 
-//      ValidateRecieveInvitationResponse(RecieveInvitationResponse);
-//    }
+      ValidateRecieveInvitationResponse(RecieveInvitationRequest, recieveInvitationResponse);
+    }
 
-//    private void ValidateRecieveInvitationResponse(RecieveInvitationResponse aRecieveInvitationResponse)
-//    {
-//      aRecieveInvitationResponse.CorrelationId.Should().Be(RecieveInvitationRequest.CorrelationId);
-//      // check Other properties here
-//    }
-
-//  }
-//}
+    public async Task Setup()
+    {
+      await ResetAgent();
+    }
+  }
+}
