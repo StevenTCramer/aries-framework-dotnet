@@ -19,7 +19,7 @@
       JsonSerializerSettings aJsonSerializerSettings
     ) : base(aAliceWebApplicationFactory, aJsonSerializerSettings)
     {
-      var recieveInvitationRequest = CreateValidRecieveInvitationRequest();
+      RecieveInvitationRequest = CreateValidRecieveInvitationRequest();
     }
 
     public void Be_Valid()
@@ -29,12 +29,16 @@
       validationResult.IsValid.Should().BeTrue();
     }
 
-    public void Have_error_when_InvitationDetails_is_empty() => RecieveInvitationRequestValidator
-      .ShouldHaveValidationErrorFor
-      (
-        aRecieveInvitationRequest => aRecieveInvitationRequest.InvitationDetails, 
-        string.Empty
-      );
+    public void Have_error_when_InvitationDetails_is_empty()
+    {
+      RecieveInvitationRequest.InvitationDetails = "";
+      RecieveInvitationRequestValidator
+        .ShouldHaveValidationErrorFor
+        (
+          aRecieveInvitationRequest => aRecieveInvitationRequest.InvitationDetails,
+          RecieveInvitationRequest
+        );
+    }
 
     public void Have_error_when_InvitationDetails_is_null()
     {
