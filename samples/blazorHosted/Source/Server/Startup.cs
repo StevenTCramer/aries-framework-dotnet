@@ -72,7 +72,8 @@ namespace Hyperledger.Aries.OpenApi.Server
         (
           aFluentValidationMvcConfiguration =>
             aFluentValidationMvcConfiguration.RegisterValidatorsFromAssemblyContaining<Startup>()
-        );
+        )
+        .AddAriesOpenApi(a => a.UseSwaggerUi = true);
 
       aServiceCollection.AddLogging();
 
@@ -105,7 +106,7 @@ namespace Hyperledger.Aries.OpenApi.Server
           .WithScopedLifetime()
       );
       ConfigureAries(aServiceCollection);
-      aServiceCollection.AddAriesOpenApi(mvcBuilder, a => a.UseSwaggerUi = true);
+      
     }
 
     private void ConfigureAries(IServiceCollection aServiceCollection)

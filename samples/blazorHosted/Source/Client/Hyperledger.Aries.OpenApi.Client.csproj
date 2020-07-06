@@ -37,6 +37,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Api\Hyperledger.Aries.OpenApi.Api.csproj" />
+    <ProjectReference Include="..\..\..\..\src\Hyperledger.Aries.OpenApi.Contracts\Hyperledger.Aries.OpenApi.Contracts.csproj" />
   </ItemGroup>
 </Project>
