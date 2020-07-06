@@ -9,8 +9,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hyperledger.Aries.AspNetCor
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hyperledger.Aries.AspNetCore.Client.Integration.Tests", "Tests\Client.Integration.Tests\Hyperledger.Aries.AspNetCore.Client.Integration.Tests.csproj", "{7CAF4AD3-43C6-4B0D-8AE9-03899F9F8A65}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hyperledger.Aries.AspNetCore.EndToEnd.Selenium.Tests", "Tests\EndToEnd.Selenium.Tests\Hyperledger.Aries.AspNetCore.EndToEnd.Selenium.Tests.csproj", "{E5338256-77A6-404D-A08E-8783F520A506}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hyperledger.Aries.AspNetCore.EndToEnd.TestCafe.Tests", "Tests\EndToEnd.TestCafe.Tests\Hyperledger.Aries.AspNetCore.EndToEnd.TestCafe.Tests.csproj", "{D6F76BA2-7E47-4BBB-ADE4-AA32BA06DEEE}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{6B623CDC-91E7-47FD-A039-A40427FB7FE8}"
@@ -82,10 +80,6 @@ Global
 		{7CAF4AD3-43C6-4B0D-8AE9-03899F9F8A65}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7CAF4AD3-43C6-4B0D-8AE9-03899F9F8A65}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7CAF4AD3-43C6-4B0D-8AE9-03899F9F8A65}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E5338256-77A6-404D-A08E-8783F520A506}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E5338256-77A6-404D-A08E-8783F520A506}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E5338256-77A6-404D-A08E-8783F520A506}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E5338256-77A6-404D-A08E-8783F520A506}.Release|Any CPU.Build.0 = Release|Any CPU
 		{D6F76BA2-7E47-4BBB-ADE4-AA32BA06DEEE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D6F76BA2-7E47-4BBB-ADE4-AA32BA06DEEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D6F76BA2-7E47-4BBB-ADE4-AA32BA06DEEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -144,7 +138,6 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{7CAF4AD3-43C6-4B0D-8AE9-03899F9F8A65} = {2902FDFD-016E-4BF7-8B41-53D674FA53DD}
-		{E5338256-77A6-404D-A08E-8783F520A506} = {2902FDFD-016E-4BF7-8B41-53D674FA53DD}
 		{D6F76BA2-7E47-4BBB-ADE4-AA32BA06DEEE} = {2902FDFD-016E-4BF7-8B41-53D674FA53DD}
 		{5DFCDB48-51CA-4263-9FAE-22CA91C3F07C} = {F24DF9E5-4306-4C7A-BBFC-86FA68E74AD5}
 		{ABA5778E-7DAF-44D7-A074-C0015065A033} = {F24DF9E5-4306-4C7A-BBFC-86FA68E74AD5}

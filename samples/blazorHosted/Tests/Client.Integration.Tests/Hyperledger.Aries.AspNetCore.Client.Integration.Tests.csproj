@@ -15,5 +15,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\Source\Client\Hyperledger.Aries.AspNetCore.Client.csproj" />
+    <ProjectReference Include="..\..\Source\Server\Hyperledger.Aries.AspNetCore.Server.csproj" />
   </ItemGroup>
 </Project>
