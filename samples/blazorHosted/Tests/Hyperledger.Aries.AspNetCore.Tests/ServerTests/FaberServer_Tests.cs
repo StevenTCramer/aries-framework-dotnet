@@ -10,9 +10,9 @@
   {
     private readonly AgentSettings AgentSettings;
 
-    public FaberServer_Tests(FaberServer aFaberServer)
+    public FaberServer_Tests(FaberApplication aFaberServer)
     {
-      AgentSettings = aFaberServer.WebHost.Services.GetService<IOptions<AgentSettings>>().Value;
+      AgentSettings = aFaberServer.ServiceProvider.GetService<IOptions<AgentSettings>>().Value;
     }
 
     public void Be_Valid()

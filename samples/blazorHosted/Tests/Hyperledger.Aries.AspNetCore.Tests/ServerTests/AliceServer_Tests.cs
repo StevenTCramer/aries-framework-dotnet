@@ -10,14 +10,14 @@
   public class AliceServer_Tests
   {
     private readonly AgentSettings AgentSettings;
-    private readonly AliceServer AliceServer;
-    private readonly FaberServer FaberServer;
+    private readonly AliceApplication AliceServer;
+    private readonly FaberApplication FaberServer;
 
-    public AliceServer_Tests(AliceServer aAliceServer, FaberServer aFaberServer)
+    public AliceServer_Tests(AliceApplication aAliceServer, FaberApplication aFaberServer)
     {
       AliceServer = aAliceServer;
       FaberServer = aFaberServer;
-      AgentSettings = aAliceServer.WebHost.Services.GetService<IOptions<AgentSettings>>().Value;
+      AgentSettings = aAliceServer.ServiceProvider.GetService<IOptions<AgentSettings>>().Value;
     }
 
     public void Be_Valid()
