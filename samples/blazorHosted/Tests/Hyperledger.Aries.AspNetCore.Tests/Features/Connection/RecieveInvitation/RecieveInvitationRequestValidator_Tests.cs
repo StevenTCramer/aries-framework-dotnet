@@ -5,22 +5,16 @@
   using FluentValidation.TestHelper;
   using Hyperledger.Aries.AspNetCore.Features.Connections;
   using Hyperledger.Aries.AspNetCore.Server.Integration.Tests.Infrastructure;
-  using Microsoft.AspNetCore.Mvc.Testing;
-  using Newtonsoft.Json;
 
-  public class Validate_Should: BaseTest
+  public class Validate_Should : BaseTest
   {
-    private ReceiveInvitationRequestValidator ReceiveInvitationRequestValidator { get; set; }
     private ReceiveInvitationRequest ReceiveInvitationRequest { get; set; }
+    private ReceiveInvitationRequestValidator ReceiveInvitationRequestValidator { get; set; }
 
-    public Validate_Should
-    (
-      AliceWebApplicationFactory aAliceWebApplicationFactory,
-      JsonSerializerSettings aJsonSerializerSettings
-    ) : base(aAliceWebApplicationFactory, aJsonSerializerSettings)
+    public Validate_Should()
     {
       ReceiveInvitationRequestValidator = new ReceiveInvitationRequestValidator();
-      ReceiveInvitationRequest = CreateValidReceiveInvitationRequest();
+      ReceiveInvitationRequest = TestApplication.CreateValidReceiveInvitationRequest();
     }
 
     public void Be_Valid()

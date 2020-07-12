@@ -14,7 +14,7 @@
     private readonly IHostBuilder HostBuilder;
     public IHost Host { get; }
 
-    public Application(string aEnvironmentName)
+    public Application(string aEnvironmentName, string[] aUrls)
     {
       HostBuilder = Microsoft.Extensions.Hosting.Host.CreateDefaultBuilder()
         .ConfigureWebHostDefaults
@@ -22,6 +22,7 @@
           aWebHostBuilder =>
           {
             aWebHostBuilder.UseStaticWebAssets();
+            aWebHostBuilder.UseUrls(aUrls);
             aWebHostBuilder.UseStartup<Startup>();
             aWebHostBuilder.UseEnvironment(aEnvironmentName);
             aWebHostBuilder.UseShutdownTimeout(TimeSpan.FromSeconds(30));

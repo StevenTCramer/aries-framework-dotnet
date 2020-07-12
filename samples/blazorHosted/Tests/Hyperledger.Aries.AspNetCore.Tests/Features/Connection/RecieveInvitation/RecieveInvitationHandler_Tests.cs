@@ -1,35 +1,27 @@
 ﻿namespace ReceiveInvitationHandler
 {
-  using System.Threading.Tasks;
-  using Hyperledger.Aries.AspNetCore.Server.Integration.Tests.Infrastructure;
   using Hyperledger.Aries.AspNetCore.Features.Connections;
-  using FluentAssertions;
-  using Newtonsoft.Json;
-  using Hyperledger.Aries.Features.DidExchange;
+  using Hyperledger.Aries.AspNetCore.Server.Integration.Tests.Infrastructure;
+  using System.Threading.Tasks;
 
   public class Handle_Returns : BaseTest
   {
+    private readonly AliceApplication AliceApplication;
     private readonly ReceiveInvitationRequest ReceiveInvitationRequest;
 
-    public Handle_Returns
-    (
-      AliceWebApplicationFactory aAliceWebApplicationFactory,
-      JsonSerializerSettings aJsonSerializerSettings
-    ) : base(aAliceWebApplicationFactory, aJsonSerializerSettings)
+    public Handle_Returns(AliceApplication aAliceApplication)
     {
-      ReceiveInvitationRequest = CreateValidReceiveInvitationRequest();
+      AliceApplication = aAliceApplication;
+      ReceiveInvitationRequest = TestApplication.CreateValidReceiveInvitationRequest();
     }
 
     public async Task ReceiveInvitationResponse()
     {
-      ReceiveInvitationResponse receiveInvitationResponse = await Send(ReceiveInvitationRequest);
+      ReceiveInvitationResponse receiveInvitationResponse = await AliceApplication.Send(ReceiveInvitationRequest);
 
-      ValidateReceiveInvitationResponse(ReceiveInvitationRequest, receiveInvitationResponse);
+      TestApplication.ValidateReceiveInvitationResponse(ReceiveInvitationRequest, receiveInvitationResponse);
     }
 
-    public async Task Setup()
-    {
-      await ResetAgent();
-    }
+    public async Task Setup() => await AliceApplication.ResetAgent();
   }
 }

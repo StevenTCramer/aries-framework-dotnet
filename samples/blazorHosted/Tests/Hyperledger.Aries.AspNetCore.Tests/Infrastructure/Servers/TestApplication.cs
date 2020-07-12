@@ -1,36 +1,43 @@
 ﻿namespace Hyperledger.Aries.AspNetCore.Server.Integration.Tests.Infrastructure
 {
-  using MediatR;
-  using Microsoft.Extensions.Hosting;
   using System;
+  using System.Linq;
   using System.Net.Http;
   using System.Threading.Tasks;
 
-  public class TestApplication : IDisposable, IAsyncDisposable
+  [NotTest]
+  public partial class TestApplication : IDisposable, IAsyncDisposable
   {
-    private bool Disposed;
     private readonly Application Application;
     private readonly MediationTestService MediationTestService;
-    private readonly WebApiTestService WebApiTestService;
+    private bool Disposed;
+    public HttpClient HttpClient { get; }
     public IServiceProvider ServiceProvider { get; }
+    public WebApiTestService WebApiTestService { get; }
 
-    public TestApplication(string aEnvironment)
+    public TestApplication(string aEnvironment, string[] aUrls)
     {
-      Application = new Application(aEnvironment);
+      Application = new Application(aEnvironment, aUrls);
       ServiceProvider = Application.Host.Services;
       MediationTestService = new MediationTestService(ServiceProvider);
-      var httpClient = new HttpClient();
-      WebApiTestService = new WebApiTestService(httpClient);
+      HttpClient = new HttpClient
+      {
+        BaseAddress = new Uri(aUrls.First())
+      };
+      WebApiTestService = new WebApiTestService(HttpClient);
     }
-
-    internal Task Send(IRequest aRequest) => MediationTestService.Send(aRequest);
-
-    internal Task<TResponse> Send<TResponse>(IRequest<TResponse> aRequest) =>
-      MediationTestService.Send(aRequest);
 
     public void Dispose()
     {
       Dispose(true);
+      GC.SuppressFinalize(this);
+    }
+
+    public async ValueTask DisposeAsync()
+    {
+      Console.WriteLine("==== TestApplication.DisposeAsync ====");
+      await DisposeAsyncCore();
+      Dispose(false);
       GC.SuppressFinalize(this);
     }
 
@@ -50,14 +57,6 @@
     {
       Console.WriteLine("==== TestApplication.DisposeAsyncCore ====");
       await Application.DisposeAsync();
-    }
-
-    public async ValueTask DisposeAsync()
-    {
-      Console.WriteLine("==== TestApplication.DisposeAsync ====");
-      await DisposeAsyncCore();
-      Dispose(false);
-      GC.SuppressFinalize(this);
     }
   }
 }

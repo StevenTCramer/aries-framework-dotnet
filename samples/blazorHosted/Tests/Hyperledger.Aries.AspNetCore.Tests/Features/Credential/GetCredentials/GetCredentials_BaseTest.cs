@@ -3,7 +3,7 @@
   using Hyperledger.Aries.AspNetCore.Features.Credentials;
   using FluentAssertions;
 
-  public partial class BaseTest
+  public partial class TestApplication
   {
     internal static void ValidateGetCredentialsResponse
     (

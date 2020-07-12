@@ -5,20 +5,13 @@
   using FluentValidation.TestHelper;
   using Hyperledger.Aries.AspNetCore.Features.Connections;
   using Hyperledger.Aries.AspNetCore.Server.Integration.Tests.Infrastructure;
-  using Microsoft.AspNetCore.Mvc.Testing;
-  using Newtonsoft.Json;
-  using Hyperledger.Aries.AspNetCore.Server;
 
-  public class Validate_Should: BaseTest
+  public class Validate_Should : BaseTest
   {
-    private DeleteConnectionRequestValidator DeleteConnectionRequestValidator { get; set; }
     private DeleteConnectionRequest DeleteConnectionRequest { get; set; }
+    private DeleteConnectionRequestValidator DeleteConnectionRequestValidator { get; set; }
 
-    public Validate_Should
-    (
-      WebApplicationFactory<Startup> aWebApplicationFactory,
-      JsonSerializerSettings aJsonSerializerSettings
-    ) : base(aWebApplicationFactory, aJsonSerializerSettings)
+    public Validate_Should()
     {
       DeleteConnectionRequestValidator = new DeleteConnectionRequestValidator();
       DeleteConnectionRequest = new DeleteConnectionRequest("ConnectionId");
@@ -40,7 +33,7 @@
       DeleteConnectionRequestValidator
         .ShouldHaveValidationErrorFor
         (
-          aDeleteConnectionRequest => aDeleteConnectionRequest.ConnectionId, 
+          aDeleteConnectionRequest => aDeleteConnectionRequest.ConnectionId,
           DeleteConnectionRequest
         );
     }

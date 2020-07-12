@@ -11,24 +11,13 @@
   {
     private readonly AgentSettings AgentSettings;
     private readonly AliceApplication AliceServer;
-    private readonly FaberApplication FaberServer;
 
-    public AliceServer_Tests(AliceApplication aAliceServer, FaberApplication aFaberServer)
+    public AliceServer_Tests(AliceApplication aAliceServer)
     {
       AliceServer = aAliceServer;
-      FaberServer = aFaberServer;
-      AgentSettings = aAliceServer.ServiceProvider.GetService<IOptions<AgentSettings>>().Value;
+      AgentSettings = AliceServer.ServiceProvider.GetService<IOptions<AgentSettings>>().Value;
     }
 
-    public void Be_Valid()
-    {
-      AgentSettings.AgentName.Should().Be("Alice");
-    }
-
-    //public async Task StopServer()
-    //{
-    //  await AliceServer.WebHost.StopAsync();
-    //  await FaberServer.WebHost.StopAsync();
-    //}
+    public void Be_Valid() => AgentSettings.AgentName.Should().Be("Alice");
   }
 }

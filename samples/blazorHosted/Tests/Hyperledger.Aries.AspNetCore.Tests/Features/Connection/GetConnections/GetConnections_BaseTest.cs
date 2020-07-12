@@ -3,12 +3,9 @@
   using Hyperledger.Aries.AspNetCore.Features.Connections;
   using FluentAssertions;
 
-  public partial class BaseTest
+  public partial class TestApplication
   {
-    internal static GetConnectionsRequest CreateValidGetConnectionsRequest()
-    {
-      return new GetConnectionsRequest();
-    }
+    internal static GetConnectionsRequest CreateValidGetConnectionsRequest() => new GetConnectionsRequest();
 
     internal static void ValidateGetConnectionsResponse(GetConnectionsRequest aGetConnectionsRequest, GetConnectionsResponse aGetConnectionsResponse)
     {

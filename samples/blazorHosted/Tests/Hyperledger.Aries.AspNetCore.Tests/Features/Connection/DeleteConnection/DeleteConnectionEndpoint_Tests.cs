@@ -1,50 +1,43 @@
 ﻿namespace DeleteConnectionEndpoint
 {
   using FluentAssertions;
-  using Microsoft.AspNetCore.Mvc.Testing;
-  using System.Net;
-  using System.Net.Http;
-  using System.Threading.Tasks;
   using Hyperledger.Aries.AspNetCore.Features.Connections;
   using Hyperledger.Aries.AspNetCore.Server.Integration.Tests.Infrastructure;
-  using Hyperledger.Aries.AspNetCore.Server;
-  using Newtonsoft.Json;
   using System;
+  using System.Net.Http;
   using System.Net.Http.Json;
+  using System.Threading.Tasks;
 
   public class Returns : BaseTest
   {
     private readonly DeleteConnectionRequest DeleteConnectionRequest;
+    private readonly FaberApplication FaberApplication;
 
-    public Returns
-    (
-      WebApplicationFactory<Startup> aWebApplicationFactory,
-      JsonSerializerSettings aJsonSerializerSettings
-    ) : base(aWebApplicationFactory, aJsonSerializerSettings)
+    public Returns(FaberApplication aFaberApplication)
     {
       DeleteConnectionRequest = new DeleteConnectionRequest("ConnectionId");
+      FaberApplication = aFaberApplication;
     }
 
     public async Task DeleteConnectionResponse_using_Json_Net()
     {
-      DeleteConnectionResponse DeleteConnectionResponse =
-        await DeleteJsonAsync<DeleteConnectionResponse>(DeleteConnectionRequest.GetRoute());
+      DeleteConnectionResponse deleteConnectionResponse =
+        await FaberApplication.WebApiTestService.DeleteJsonAsync<DeleteConnectionResponse>(DeleteConnectionRequest.GetRoute());
 
-      ValidateDeleteConnectionResponse(DeleteConnectionRequest, DeleteConnectionResponse);
+      TestApplication.ValidateDeleteConnectionResponse(DeleteConnectionRequest, deleteConnectionResponse);
     }
 
     public async Task GetConnectionsResponse_using_System_Text_Json()
     {
-      HttpResponseMessage httpResponseMessage = await HttpClient.DeleteAsync(DeleteConnectionRequest.GetRoute());
+      HttpResponseMessage httpResponseMessage = await FaberApplication.HttpClient.DeleteAsync(DeleteConnectionRequest.GetRoute());
 
       httpResponseMessage.EnsureSuccessStatusCode();
 
-      DeleteConnectionResponse deleteConnectionResponse = 
+      DeleteConnectionResponse deleteConnectionResponse =
         await httpResponseMessage.Content.ReadFromJsonAsync<DeleteConnectionResponse>();
 
       deleteConnectionResponse.Should().NotBeNull();
     }
-
 
     public void ValidationError()
     {
@@ -54,7 +47,6 @@
       // Act & Assert
       DeleteConnectionRequest.Invoking(aGetConnectionRequest => aGetConnectionRequest.GetRoute())
         .Should().Throw<ArgumentNullException>();
-
     }
   }
 }

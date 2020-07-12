@@ -5,13 +5,11 @@
   using Hyperledger.Aries.Features.DidExchange;
   using System;
 
-  public partial class BaseTest
+  public partial class TestApplication
   {
-    internal static GetConnectionRequest CreateValidGetConnectionRequest()
-    {
+    internal static GetConnectionRequest CreateValidGetConnectionRequest() =>
       // This will validate but the GUID won't be in the wallet.
-      return new GetConnectionRequest(aConnectionId: Guid.NewGuid().ToString());
-    }
+      new GetConnectionRequest(aConnectionId: Guid.NewGuid().ToString());
 
     internal static void ValidateGetConnectionResponse(GetConnectionRequest aGetConnectionRequest, GetConnectionResponse aGetConnectionResponse)
     {

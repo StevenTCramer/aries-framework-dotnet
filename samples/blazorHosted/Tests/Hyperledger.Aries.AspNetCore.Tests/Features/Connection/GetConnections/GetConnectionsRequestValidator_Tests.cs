@@ -1,27 +1,20 @@
 ﻿namespace GetConnectionsRequestValidator_
 {
-  using Hyperledger.Aries.AspNetCore.Features.Connections;
-  using Hyperledger.Aries.AspNetCore.Server;
-  using Hyperledger.Aries.AspNetCore.Server.Integration.Tests.Infrastructure;
   using FluentAssertions;
   using FluentValidation.Results;
   using FluentValidation.TestHelper;
-  using Microsoft.AspNetCore.Mvc.Testing;
-  using Newtonsoft.Json;
+  using Hyperledger.Aries.AspNetCore.Features.Connections;
+  using Hyperledger.Aries.AspNetCore.Server.Integration.Tests.Infrastructure;
 
   public class Validate_Should : BaseTest
   {
     private GetConnectionsRequest GetConnectionsRequest { get; set; }
     private GetConnectionsRequestValidator GetConnectionsRequestValidator { get; set; }
 
-    public Validate_Should
-    (
-      WebApplicationFactory<Startup> aWebApplicationFactory,
-      JsonSerializerSettings aJsonSerializerSettings
-    ) : base(aWebApplicationFactory, aJsonSerializerSettings)
+    public Validate_Should()
     {
       GetConnectionsRequestValidator = new GetConnectionsRequestValidator();
-      GetConnectionsRequest = CreateValidGetConnectionsRequest();
+      GetConnectionsRequest = TestApplication.CreateValidGetConnectionsRequest();
     }
 
     public void Be_Valid()

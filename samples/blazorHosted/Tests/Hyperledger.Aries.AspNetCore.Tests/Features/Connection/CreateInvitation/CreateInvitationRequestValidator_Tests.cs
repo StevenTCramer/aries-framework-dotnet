@@ -1,28 +1,21 @@
 ﻿namespace CreateInvitationRequestValidator_
 {
-  using Hyperledger.Aries.AspNetCore.Features.Connections;
-  using Hyperledger.Aries.AspNetCore.Server;
-  using Hyperledger.Aries.AspNetCore.Server.Integration.Tests.Infrastructure;
   using FluentAssertions;
   using FluentValidation.Results;
   using FluentValidation.TestHelper;
-  using Microsoft.AspNetCore.Mvc.Testing;
-  using Newtonsoft.Json;
+  using Hyperledger.Aries.AspNetCore.Features.Connections;
+  using Hyperledger.Aries.AspNetCore.Server.Integration.Tests.Infrastructure;
   using System.Linq;
-  
+
   public class Validate_Should : BaseTest
   {
     private CreateInvitationRequest CreateInvitationRequest { get; set; }
     private CreateInvitationRequestValidator CreateInvitationRequestValidator { get; set; }
 
-    public Validate_Should
-    (
-      WebApplicationFactory<Startup> aWebApplicationFactory,
-      JsonSerializerSettings aJsonSerializerSettings
-    ) : base(aWebApplicationFactory, aJsonSerializerSettings)
+    public Validate_Should()
     {
       CreateInvitationRequestValidator = new CreateInvitationRequestValidator();
-      CreateInvitationRequest = CreateValidCreateInvitationRequest();
+      CreateInvitationRequest = TestApplication.CreateValidCreateInvitationRequest();
     }
 
     public void Be_Valid()

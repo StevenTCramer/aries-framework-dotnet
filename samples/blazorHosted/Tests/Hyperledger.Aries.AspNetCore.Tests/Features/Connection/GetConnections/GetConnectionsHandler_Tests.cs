@@ -1,37 +1,32 @@
 ﻿namespace GetConnectionsHandler
 {
-  using System.Threading.Tasks;
-  using Microsoft.AspNetCore.Mvc.Testing;
-  using Hyperledger.Aries.AspNetCore.Server.Integration.Tests.Infrastructure;
   using Hyperledger.Aries.AspNetCore.Features.Connections;
-  using Hyperledger.Aries.AspNetCore.Server;
-  using Newtonsoft.Json;
+  using Hyperledger.Aries.AspNetCore.Server.Integration.Tests.Infrastructure;
+  using System.Threading.Tasks;
 
   public class Handle_Returns : BaseTest
   {
+    private readonly FaberApplication FaberApplication;
     private readonly GetConnectionsRequest GetConnectionsRequest;
 
-    public Handle_Returns
-    (
-      WebApplicationFactory<Startup> aWebApplicationFactory,
-      JsonSerializerSettings aJsonSerializerSettings
-    ) : base(aWebApplicationFactory, aJsonSerializerSettings)
+    public Handle_Returns(FaberApplication aFaberApplication)
     {
-      GetConnectionsRequest = CreateValidGetConnectionsRequest();
+      GetConnectionsRequest = TestApplication.CreateValidGetConnectionsRequest();
+      FaberApplication = aFaberApplication;
     }
 
     public async Task GetConnectionsResponse()
     {
       // Arrage
-      await CreateAnInvitation();
+      await FaberApplication.CreateAnInvitation();
 
       // Act
-      GetConnectionsResponse getConnectionsResponse = await Send(GetConnectionsRequest);
+      GetConnectionsResponse getConnectionsResponse = await FaberApplication.Send(GetConnectionsRequest);
 
       // Assert
-      ValidateGetConnectionsResponse(GetConnectionsRequest, getConnectionsResponse);
+      TestApplication.ValidateGetConnectionsResponse(GetConnectionsRequest, getConnectionsResponse);
     }
 
-    public async Task Setup() => await ResetAgent();
+    public async Task Setup() => await FaberApplication.ResetAgent();
   }
 }

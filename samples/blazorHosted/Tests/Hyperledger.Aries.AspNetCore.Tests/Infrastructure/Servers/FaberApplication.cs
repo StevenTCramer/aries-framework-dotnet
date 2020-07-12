@@ -3,7 +3,15 @@
   [NotTest]
   public class FaberApplication : TestApplication
   {
-    public FaberApplication() : base("Development") { }
-
+    public FaberApplication() :
+      base
+      (
+        aEnvironment: "Development",
+        aUrls: new[]
+        {
+          "https://localhost:5551",
+          "http://localhost:5550"
+        }
+      ) { }
   }
 }

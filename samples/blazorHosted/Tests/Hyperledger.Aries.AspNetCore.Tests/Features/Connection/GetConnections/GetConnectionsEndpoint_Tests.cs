@@ -1,54 +1,44 @@
 ﻿namespace GetConnectionsEndpoint
 {
-  using FluentAssertions;
-  using Microsoft.AspNetCore.Mvc.Testing;
-  using System.Net;
-  using System.Net.Http;
-  using System.Text.Json;
-  using System.Threading.Tasks;
   using Hyperledger.Aries.AspNetCore.Features.Connections;
   using Hyperledger.Aries.AspNetCore.Server.Integration.Tests.Infrastructure;
-  using Hyperledger.Aries.AspNetCore.Server;
-  using Newtonsoft.Json;
   using System.Net.Http.Json;
+  using System.Threading.Tasks;
 
   public class Returns : BaseTest
   {
+    private readonly FaberApplication FaberApplication;
     private readonly GetConnectionsRequest GetConnectionsRequest;
 
-    public Returns
-    (
-      WebApplicationFactory<Startup> aWebApplicationFactory,
-      JsonSerializerSettings aJsonSerializerSettings
-    ) : base(aWebApplicationFactory, aJsonSerializerSettings)
+    public Returns(FaberApplication aFaberApplication)
     {
       GetConnectionsRequest = new GetConnectionsRequest();
+      FaberApplication = aFaberApplication;
     }
 
     public async Task GetConnectionsResponse_using_Json_Net()
     {
-
       GetConnectionsResponse getConnectionsResponse =
-        await GetJsonAsync<GetConnectionsResponse>(GetConnectionsRequest.GetRoute());
+        await FaberApplication.WebApiTestService.GetJsonAsync<GetConnectionsResponse>(GetConnectionsRequest.GetRoute());
 
-      ValidateGetConnectionsResponse(GetConnectionsRequest, getConnectionsResponse);
+      TestApplication.ValidateGetConnectionsResponse(GetConnectionsRequest, getConnectionsResponse);
     }
 
     public async Task GetConnectionsResponse_using_System_Text_Json()
     {
       GetConnectionsResponse getConnectionsResponse =
-        await HttpClient.GetFromJsonAsync<GetConnectionsResponse>(GetConnectionsRequest.GetRoute());
+        await FaberApplication.HttpClient.GetFromJsonAsync<GetConnectionsResponse>(GetConnectionsRequest.GetRoute());
 
-      ValidateGetConnectionsResponse(GetConnectionsRequest, getConnectionsResponse);
+      TestApplication.ValidateGetConnectionsResponse(GetConnectionsRequest, getConnectionsResponse);
+    }
+
+    public async Task Setup()
+    {
+      await FaberApplication.ResetAgent();
+      await FaberApplication.CreateAnInvitation();
     }
 
     // There are no validation requirements for this request
     public void ValidationError() { }
-
-    public async Task Setup()
-    {
-      await ResetAgent();
-      await CreateAnInvitation();
-    }
   }
 }

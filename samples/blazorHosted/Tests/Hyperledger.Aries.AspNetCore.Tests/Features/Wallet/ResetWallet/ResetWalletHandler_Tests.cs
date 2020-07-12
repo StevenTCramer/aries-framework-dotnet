@@ -7,18 +7,16 @@
   using FluentAssertions;
   using Microsoft.AspNetCore.Mvc.Testing;
   using Newtonsoft.Json;
-  using System.Threading.Tasks;  
+  using System.Threading.Tasks;
 
   public class Handle_Returns : BaseTest
   {
     private readonly ResetWalletRequest ResetWalletRequest;
+    private readonly FaberApplication FaberApplication;
 
-    public Handle_Returns
-    (
-      WebApplicationFactory<Startup> aWebApplicationFactory,
-      JsonSerializerSettings aJsonSerializerSettings
-    ) : base(aWebApplicationFactory, aJsonSerializerSettings)
+    public Handle_Returns(FaberApplication aFaberApplication)
     {
+      FaberApplication = aFaberApplication;
       ResetWalletRequest = new ResetWalletRequest();
     }
 
@@ -26,19 +24,19 @@
     {
       // Arrage
       // Add something to the wallet 
-      await CreateAnInvitation();
+      await FaberApplication.CreateAnInvitation();
 
       //Act
-      ResetWalletResponse resetWalletResponse = await Send(ResetWalletRequest);
+      ResetWalletResponse resetWalletResponse = await FaberApplication.Send(ResetWalletRequest);
 
       // See what is in the wallet
-      GetConnectionsRequest getConnectionsRequest = CreateValidGetConnectionsRequest();
-      GetConnectionsResponse getConnectionsResponse = await Send(getConnectionsRequest);
+      GetConnectionsRequest getConnectionsRequest = TestApplication.CreateValidGetConnectionsRequest();
+      GetConnectionsResponse getConnectionsResponse = await FaberApplication.Send(getConnectionsRequest);
 
       // Assert Item created isn't there
       getConnectionsResponse.ConnectionRecords.Count.Should().Be(0);
 
-      ValidateResetWalletResponse(ResetWalletRequest, resetWalletResponse);
+      TestApplication.ValidateResetWalletResponse(ResetWalletRequest, resetWalletResponse);
     }
   }
 }

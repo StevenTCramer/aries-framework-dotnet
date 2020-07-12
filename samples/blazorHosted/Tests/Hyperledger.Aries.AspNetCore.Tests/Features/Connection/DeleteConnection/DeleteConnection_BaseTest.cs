@@ -2,15 +2,12 @@
 {
   using Hyperledger.Aries.AspNetCore.Features.Connections;
   using FluentAssertions;
-  public partial class BaseTest
+  public partial class TestApplication
   {
     internal static void ValidateDeleteConnectionResponse
     (
-      DeleteConnectionRequest aDeleteConnectionRequest, 
+      DeleteConnectionRequest aDeleteConnectionRequest,
       DeleteConnectionResponse aDeleteConnectionResponse
-    )
-    {
-      aDeleteConnectionResponse.CorrelationId.Should().Be(aDeleteConnectionRequest.CorrelationId);
-    }
+    ) => aDeleteConnectionResponse.CorrelationId.Should().Be(aDeleteConnectionRequest.CorrelationId);
   }
 }

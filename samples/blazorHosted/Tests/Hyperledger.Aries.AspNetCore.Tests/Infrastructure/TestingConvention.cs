@@ -19,8 +19,6 @@ namespace Hyperledger.Aries.AspNetCore.Server.Integration.Tests.Infrastructure
     private AliceApplication AliceApplication;
     private bool Disposed;
     private FaberApplication FaberApplication;
-    //private FaberWebApplicationFactory FaberWebApplicationFactory;
-    //private AliceWebApplicationFactory AliceWebApplicationFactory;
 
     public TestingConvention()
     {
@@ -29,8 +27,8 @@ namespace Hyperledger.Aries.AspNetCore.Server.Integration.Tests.Infrastructure
       ServiceProvider = testServices.BuildServiceProvider();
       ServiceScopeFactory = ServiceProvider.GetService<IServiceScopeFactory>();
 
-      Classes.Where(aType => aType.IsPublic && !aType.Has<NotTest>())
-        .Where(aType => aType.Name.Contains("AliceServer"));
+      Classes.Where(aType => aType.IsPublic && !aType.Has<NotTest>());
+        //.Where(aType => aType.Name.Contains("AliceServer"));
       Methods.Where(aMethodInfo => aMethodInfo.Name != nameof(Setup));
     }
 
@@ -64,15 +62,6 @@ namespace Hyperledger.Aries.AspNetCore.Server.Integration.Tests.Infrastructure
 
     private void ConfigureTestServices(ServiceCollection aServiceCollection)
     {
-      //FaberServer = new FaberServer();
-      //AliceServer = new AliceServer();
-      //FaberWebApplicationFactory = new FaberWebApplicationFactory();
-      //AliceWebApplicationFactory = new AliceWebApplicationFactory();
-
-      //aServiceCollection.AddSingleton<WebApplicationFactory<Startup>>(FaberWebApplicationFactory);
-      //aServiceCollection.AddSingleton(FaberWebApplicationFactory);
-      //aServiceCollection.AddSingleton(AliceWebApplicationFactory);
-
       FaberApplication FaberServerFactory(IServiceProvider aServiceProvider)
       {
         FaberApplication = new FaberApplication();
@@ -108,8 +97,6 @@ namespace Hyperledger.Aries.AspNetCore.Server.Integration.Tests.Infrastructure
         Console.WriteLine("==== TestingConvention.Dispose ====");
         FaberApplication?.DisposeAsync().GetAwaiter().GetResult();
         AliceApplication?.DisposeAsync().GetAwaiter().GetResult();
-        //FaberWebApplicationFactory?.Dispose();
-        //AliceWebApplicationFactory?.Dispose();
         ServiceScopeFactory?.Dispose();
       }
       Disposed = true;

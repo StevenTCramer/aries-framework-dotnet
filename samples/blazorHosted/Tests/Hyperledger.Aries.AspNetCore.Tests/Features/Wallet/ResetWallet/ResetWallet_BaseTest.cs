@@ -1,15 +1,16 @@
 ﻿namespace Hyperledger.Aries.AspNetCore.Server.Integration.Tests.Infrastructure
 {
-  using Hyperledger.Aries.AspNetCore.Features.Wallets;
   using FluentAssertions;
+  using Hyperledger.Aries.AspNetCore.Features.Wallets;
   using System.Threading.Tasks;
 
-  public partial class BaseTest
+  public partial class TestApplication
   {
-    internal static void ValidateResetWalletResponse(ResetWalletRequest aResetWalletRequest, ResetWalletResponse aResetWalletResponse)
-    {
-      aResetWalletResponse.CorrelationId.Should().Be(aResetWalletRequest.CorrelationId);
-    }
+    internal static void ValidateResetWalletResponse
+    (
+      ResetWalletRequest aResetWalletRequest,
+      ResetWalletResponse aResetWalletResponse
+    ) => aResetWalletResponse.CorrelationId.Should().Be(aResetWalletRequest.CorrelationId);
 
     internal Task ResetAgent() => Send(new ResetWalletRequest());
   }

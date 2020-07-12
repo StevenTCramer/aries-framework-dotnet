@@ -8,7 +8,7 @@
   using System.Linq;
   using System.Text;
   using System.Threading.Tasks;
-  public partial class BaseTest
+  public partial class TestApplication
   {
     internal static ReceiveInvitationRequest CreateValidReceiveInvitationRequest()
     {

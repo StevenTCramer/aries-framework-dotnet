@@ -2,7 +2,7 @@
 {
   using Hyperledger.Aries.AspNetCore.Features.Wallets;
   using FluentAssertions;
-  public partial class BaseTest
+  public partial class TestApplication
   {
 
     internal static void ValidateGetWalletResponse(GetWalletRequest aGetWalletRequest, GetWalletResponse aGetWalletResponse)

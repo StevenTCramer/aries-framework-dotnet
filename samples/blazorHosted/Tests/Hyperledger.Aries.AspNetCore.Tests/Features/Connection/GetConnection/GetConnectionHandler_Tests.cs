@@ -10,29 +10,30 @@
   public class Handle_Returns : BaseTest
   {
     private readonly GetConnectionRequest GetConnectionRequest;
+    private readonly FaberApplication FaberApplication;
 
     public Handle_Returns
     (
-      WebApplicationFactory<Startup> aWebApplicationFactory,
-      JsonSerializerSettings aJsonSerializerSettings
-    ) : base(aWebApplicationFactory, aJsonSerializerSettings)
+      FaberApplication aFaberApplication
+    ) 
     {
-      GetConnectionRequest = CreateValidGetConnectionRequest();
+      GetConnectionRequest = TestApplication.CreateValidGetConnectionRequest();
+      FaberApplication = aFaberApplication;
     }
 
     public async Task GetConnectionResponse()
     {
       // Arrange
-      CreateInvitationResponse createInvitationResponse = await CreateAnInvitation();
+      CreateInvitationResponse createInvitationResponse = await FaberApplication.CreateAnInvitation();
       GetConnectionRequest.ConnectionId = createInvitationResponse.ConnectionRecord.Id;
 
       //Act
-      GetConnectionResponse GetConnectionResponse = await Send(GetConnectionRequest);
+      GetConnectionResponse getConnectionResponse = await FaberApplication.Send(GetConnectionRequest);
 
       //Assert
-      ValidateGetConnectionResponse(GetConnectionRequest, GetConnectionResponse);
+      TestApplication.ValidateGetConnectionResponse(GetConnectionRequest, getConnectionResponse);
     }
 
-    public async Task Setup() => await ResetAgent();
+    public async Task Setup() => await FaberApplication.ResetAgent();
   }
 }

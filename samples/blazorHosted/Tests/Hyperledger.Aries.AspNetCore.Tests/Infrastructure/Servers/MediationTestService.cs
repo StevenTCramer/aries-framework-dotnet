@@ -46,4 +46,11 @@
       return await aAction(serviceScope.ServiceProvider);
     }
   }
+
+  public partial class TestApplication
+  {
+    internal Task Send(IRequest aRequest) => MediationTestService.Send(aRequest);
+    internal Task<TResponse> Send<TResponse>(IRequest<TResponse> aRequest) =>
+      MediationTestService.Send(aRequest);
+  }
 }

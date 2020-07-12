@@ -13,16 +13,15 @@
 
   public class Returns : BaseTest
   {
+    private readonly FaberApplication FaberApplication;
+
     private CreateInvitationResponse CreateInvitationResponse { get; set; }
     private GetConnectionRequest GetConnectionRequest { get; set; }
 
-    public Returns
-    (
-      WebApplicationFactory<Startup> aWebApplicationFactory,
-      JsonSerializerSettings aJsonSerializerSettings
-    ) : base(aWebApplicationFactory, aJsonSerializerSettings)
+    public Returns(FaberApplication aFaberApplication)
     {
-      GetConnectionRequest = CreateValidGetConnectionRequest();
+      FaberApplication = aFaberApplication;
+      GetConnectionRequest = TestApplication.CreateValidGetConnectionRequest();
     }
 
     public async Task GetConnectionResponse_using_Json_Net()
@@ -30,9 +29,9 @@
       GetConnectionRequest.ConnectionId = CreateInvitationResponse.ConnectionRecord.Id;
 
       GetConnectionResponse getConnectionResponse =
-        await GetJsonAsync<GetConnectionResponse>(GetConnectionRequest.GetRoute());
+        await FaberApplication.WebApiTestService.GetJsonAsync<GetConnectionResponse>(GetConnectionRequest.GetRoute());
 
-      ValidateGetConnectionResponse(GetConnectionRequest, getConnectionResponse);
+      FaberApplication.ValidateGetConnectionResponse(GetConnectionRequest, getConnectionResponse);
     }
 
     public async Task GetConnectionResponse_using_System_Text_Json()
@@ -40,15 +39,15 @@
       GetConnectionRequest.ConnectionId = CreateInvitationResponse.ConnectionRecord.Id;
 
       GetConnectionResponse getConnectionResponse =
-        await HttpClient.GetFromJsonAsync<GetConnectionResponse>(GetConnectionRequest.GetRoute());
+        await FaberApplication.HttpClient.GetFromJsonAsync<GetConnectionResponse>(GetConnectionRequest.GetRoute());
 
-      ValidateGetConnectionResponse(GetConnectionRequest, getConnectionResponse);
+      TestApplication.ValidateGetConnectionResponse(GetConnectionRequest, getConnectionResponse);
     }
 
     public async Task Setup()
     {
-      await ResetAgent();
-      CreateInvitationResponse = await CreateAnInvitation();
+      await FaberApplication.ResetAgent();
+      CreateInvitationResponse = await FaberApplication.CreateAnInvitation();
     }
 
     public void ValidationError()

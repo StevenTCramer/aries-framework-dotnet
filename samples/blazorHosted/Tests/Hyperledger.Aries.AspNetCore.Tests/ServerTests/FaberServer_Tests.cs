@@ -15,9 +15,6 @@
       AgentSettings = aFaberServer.ServiceProvider.GetService<IOptions<AgentSettings>>().Value;
     }
 
-    public void Be_Valid()
-    {
-      AgentSettings.AgentName.Should().Be("Faber");
-    }
+    public void Be_Valid() => AgentSettings.AgentName.Should().Be("Faber");
   }
 }

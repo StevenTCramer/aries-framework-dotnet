@@ -1,32 +1,27 @@
 ﻿namespace GetWalletHandler
 {
   using Hyperledger.Aries.AspNetCore.Features.Wallets;
-  using Hyperledger.Aries.AspNetCore.Server;
   using Hyperledger.Aries.AspNetCore.Server.Integration.Tests.Infrastructure;
-  using Microsoft.AspNetCore.Mvc.Testing;
-  using Newtonsoft.Json;
   using System.Threading.Tasks;
 
   public class Handle_Returns : BaseTest
   {
+    private readonly FaberApplication FaberApplication;
     private readonly GetWalletRequest GetWalletRequest;
 
-    public Handle_Returns
-    (
-      WebApplicationFactory<Startup> aWebApplicationFactory,
-      JsonSerializerSettings aJsonSerializerSettings
-    ) : base(aWebApplicationFactory, aJsonSerializerSettings)
+    public Handle_Returns(FaberApplication aFaberApplication)
     {
+      FaberApplication = aFaberApplication;
       GetWalletRequest = new GetWalletRequest();
     }
 
     public async Task GetWalletResponse()
     {
-      GetWalletResponse getWalletResponse = await Send(GetWalletRequest);
+      GetWalletResponse getWalletResponse = await FaberApplication.Send(GetWalletRequest);
 
-      ValidateGetWalletResponse(GetWalletRequest, getWalletResponse);
+      TestApplication.ValidateGetWalletResponse(GetWalletRequest, getWalletResponse);
     }
 
-    public async Task Setup() => await ResetAgent();
+    public async Task Setup() => await FaberApplication.ResetAgent();
   }
 }

@@ -5,14 +5,11 @@
   using Hyperledger.Aries.Features.DidExchange;
   using System.Threading.Tasks;
 
-  public partial class BaseTest
+  public partial class TestApplication
   {
-    internal async Task<CreateInvitationResponse> CreateAnInvitation()
-    {
-      return await Send(CreateValidCreateInvitationRequest());
-    }
+    internal async Task<CreateInvitationResponse> CreateAnInvitation() => await Send(CreateValidCreateInvitationRequest());
 
-    internal CreateInvitationRequest CreateValidCreateInvitationRequest()
+    internal static CreateInvitationRequest CreateValidCreateInvitationRequest()
     {
       var inviteConfiguration = new InviteConfiguration
       {
@@ -23,7 +20,7 @@
       return new CreateInvitationRequest(inviteConfiguration);
     }
 
-    internal void ValidateCreateInvitationResponse(CreateInvitationRequest aCreateInvitationRequest, CreateInvitationResponse aCreateInvitationResponse)
+    internal static void ValidateCreateInvitationResponse(CreateInvitationRequest aCreateInvitationRequest, CreateInvitationResponse aCreateInvitationResponse)
     {
       aCreateInvitationResponse.CorrelationId.Should().Be(aCreateInvitationRequest.CorrelationId);
       aCreateInvitationResponse.ConnectionInvitationMessage.Id.Should().NotBeNullOrEmpty();
