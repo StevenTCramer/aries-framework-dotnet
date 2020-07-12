@@ -8,16 +8,14 @@
   using System.Threading.Tasks;
 
   [NotTest]
-  public class Application : IAsyncDisposable, IDisposable
+  public class Application : IDisposable
   {
-    private readonly CancellationTokenSource CancellationTokenSource;
+    private bool Disposed;
     private readonly IHostBuilder HostBuilder;
     public IHost Host { get; }
 
     public Application(string aEnvironmentName)
     {
-      CancellationTokenSource = new CancellationTokenSource();
-
       HostBuilder = Microsoft.Extensions.Hosting.Host.CreateDefaultBuilder()
         .ConfigureWebHostDefaults
         (
@@ -31,26 +29,28 @@
         );
 
       Host = HostBuilder.Build();
-      Host.StartAsync(CancellationTokenSource.Token);
+      Host.StartAsync();
+    }
+
+    protected virtual void Dispose(bool aIsDisposing)
+    {
+      if (Disposed) return;
+
+      if (aIsDisposing)
+      {
+        Console.WriteLine("==== Wait till Host Stops ====");
+        Host?.StopAsync().GetAwaiter().GetResult();
+        Console.WriteLine("==== Now dispose of Host ====");
+        Host?.Dispose();
+      }
+
+      Disposed = true;
     }
 
     public void Dispose()
     {
-      Console.WriteLine("==== Server.Dispose ====");
-      CancellationTokenSource.Cancel();
-    }
-
-    public async ValueTask DisposeAsync()
-    {
-      Console.WriteLine("==== Server.DisposeAsync ====");
-      await Host.StopAsync(CancellationTokenSource.Token);
-      CancellationTokenSource.Cancel();
-    }
-
-    public void KillIt()
-    {
-      IHostApplicationLifetime hostApplicationLifetime = Host.Services.GetService<IHostApplicationLifetime>();
-      hostApplicationLifetime.StopApplication();
+      Dispose(true);
+      GC.SuppressFinalize(this);
     }
   }
 }

@@ -1,13 +1,12 @@
 ﻿namespace Hyperledger.Aries.AspNetCore.Server.Integration.Tests.Infrastructure
 {
   using MediatR;
-  using Microsoft.AspNetCore.TestHost;
-  using Microsoft.Extensions.DependencyInjection;
+  using Microsoft.Extensions.Hosting;
   using System;
   using System.Net.Http;
   using System.Threading.Tasks;
 
-  public class TestApplication : IAsyncDisposable
+  public class TestApplication : IDisposable
   {
     private readonly Application Application;
     private readonly MediationTestService MediationTestService;
@@ -23,14 +22,14 @@
       WebApiTestService = new WebApiTestService(httpClient);
     }
 
-    public async ValueTask DisposeAsync()
-    {
-      await Application.DisposeAsync();
-    }
-
     internal Task Send(IRequest aRequest) => MediationTestService.Send(aRequest);
 
     internal Task<TResponse> Send<TResponse>(IRequest<TResponse> aRequest) =>
       MediationTestService.Send(aRequest);
+
+    public void Dispose()
+    {
+      Application.Dispose();
+    }
   }
 }

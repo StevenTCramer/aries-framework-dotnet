@@ -6,20 +6,19 @@ namespace Hyperledger.Aries.AspNetCore.Server.Integration.Tests.Infrastructure
   using System;
   using System.Reflection;
   using System.Text.Json;
-  using System.Threading.Tasks;
 
   [NotTest]
   [AttributeUsage(AttributeTargets.Class, AllowMultiple = false)]
   public class NotTest : Attribute { }
 
   [NotTest]
-  public class TestingConvention : Discovery, Execution, IAsyncDisposable, IDisposable
+  public sealed class TestingConvention : Discovery, Execution, IDisposable
   {
+    private readonly ServiceProvider ServiceProvider;
     private readonly IServiceScopeFactory ServiceScopeFactory;
     private AliceApplication AliceApplication;
     private bool Disposed;
     private FaberApplication FaberApplication;
-    private readonly ServiceProvider ServiceProvider;
     //private FaberWebApplicationFactory FaberWebApplicationFactory;
     //private AliceWebApplicationFactory AliceWebApplicationFactory;
 
@@ -38,16 +37,6 @@ namespace Hyperledger.Aries.AspNetCore.Server.Integration.Tests.Infrastructure
     public void Dispose()
     {
       Dispose(aIsDisposing: true);
-      GC.SuppressFinalize(this);
-    }
-
-    public async ValueTask DisposeAsync()
-    {
-      Console.WriteLine("==== TestingConvention.DisposeAsync ====");
-      await ServiceProvider.DisposeAsync().ConfigureAwait(false);
-      await FaberApplication.DisposeAsync().ConfigureAwait(false);
-      await AliceApplication.DisposeAsync().ConfigureAwait(false);
-      Dispose(aIsDisposing: false);
       GC.SuppressFinalize(this);
     }
 
@@ -117,9 +106,10 @@ namespace Hyperledger.Aries.AspNetCore.Server.Integration.Tests.Infrastructure
       if (aIsDisposing)
       {
         Console.WriteLine("==== TestingConvention.Dispose ====");
+        FaberApplication?.Dispose();
+        AliceApplication?.Dispose();
         //FaberWebApplicationFactory?.Dispose();
         //AliceWebApplicationFactory?.Dispose();
-        DisposeAsync().GetAwaiter().GetResult();
         ServiceScopeFactory?.Dispose();
       }
       Disposed = true;
