@@ -6,8 +6,9 @@
   using System.Net.Http;
   using System.Threading.Tasks;
 
-  public class TestApplication : IDisposable
+  public class TestApplication : IDisposable, IAsyncDisposable
   {
+    private bool Disposed;
     private readonly Application Application;
     private readonly MediationTestService MediationTestService;
     private readonly WebApiTestService WebApiTestService;
@@ -29,7 +30,34 @@
 
     public void Dispose()
     {
-      Application.Dispose();
+      Dispose(true);
+      GC.SuppressFinalize(this);
+    }
+
+    protected virtual void Dispose(bool aIsDisposing)
+    {
+      if (Disposed) return;
+
+      if (aIsDisposing)
+      {
+        Application?.Dispose();
+      }
+
+      Disposed = true;
+    }
+
+    protected virtual async ValueTask DisposeAsyncCore()
+    {
+      Console.WriteLine("==== TestApplication.DisposeAsyncCore ====");
+      await Application.DisposeAsync();
+    }
+
+    public async ValueTask DisposeAsync()
+    {
+      Console.WriteLine("==== TestApplication.DisposeAsync ====");
+      await DisposeAsyncCore();
+      Dispose(false);
+      GC.SuppressFinalize(this);
     }
   }
 }

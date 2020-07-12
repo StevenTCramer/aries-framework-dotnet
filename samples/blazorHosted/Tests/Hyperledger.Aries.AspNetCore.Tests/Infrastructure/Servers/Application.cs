@@ -8,7 +8,7 @@
   using System.Threading.Tasks;
 
   [NotTest]
-  public class Application : IDisposable
+  public class Application : IDisposable, IAsyncDisposable
   {
     private bool Disposed;
     private readonly IHostBuilder HostBuilder;
@@ -34,6 +34,7 @@
 
     protected virtual void Dispose(bool aIsDisposing)
     {
+      Console.WriteLine($"==== Application.Dispose({aIsDisposing}) ====");
       if (Disposed) return;
 
       if (aIsDisposing)
@@ -49,7 +50,24 @@
 
     public void Dispose()
     {
+      Console.WriteLine("==== Application.Dispose ====");
       Dispose(true);
+      GC.SuppressFinalize(this);
+    }
+
+
+    protected virtual async ValueTask DisposeAsyncCore()
+    {
+      Console.WriteLine("==== Application.DisposeAsyncCore ====");
+      await Host.StopAsync();
+      Host?.Dispose();
+    }
+
+    public async ValueTask DisposeAsync()
+    {
+      Console.WriteLine("==== Application.DisposeAsync ====");
+      await DisposeAsyncCore();
+      Dispose(false);
       GC.SuppressFinalize(this);
     }
   }

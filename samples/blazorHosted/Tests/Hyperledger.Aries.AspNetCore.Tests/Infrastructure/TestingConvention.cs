@@ -106,8 +106,8 @@ namespace Hyperledger.Aries.AspNetCore.Server.Integration.Tests.Infrastructure
       if (aIsDisposing)
       {
         Console.WriteLine("==== TestingConvention.Dispose ====");
-        FaberApplication?.Dispose();
-        AliceApplication?.Dispose();
+        FaberApplication?.DisposeAsync().GetAwaiter().GetResult();
+        AliceApplication?.DisposeAsync().GetAwaiter().GetResult();
         //FaberWebApplicationFactory?.Dispose();
         //AliceWebApplicationFactory?.Dispose();
         ServiceScopeFactory?.Dispose();
